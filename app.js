@@ -12,7 +12,7 @@ App({
                         //console.log(res.data.openid);
                         that.m_info.wxoid = res.data.openid;
                     }
-                })
+                });
                 wx.showToast({
                     title:    '登录成功',
                     icon:     'success',
