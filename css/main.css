@@ -1,0 +1,396 @@
+/*全局样式*/
+
+@font-face {
+	font-family: "NotoSans";
+	src: local("Noto Sans")
+}
+
+
+/*标题：*/
+
+
+/*一级标题：主标题、突出标题*/
+
+.title_main {
+	font-size: 20pt;
+	font-weight: 700;
+	color: #000000;
+}
+
+
+/*二级标题：模块标题*/
+
+.title_minor {
+	font-size: 16pt;
+	font-weight: 500;
+	color: #353535;
+}
+
+
+/*二级副标题：解释、补充二级标题*/
+
+.title_afterminor {
+	font-size: 11pt;
+	font-weight: 500;
+	color: #888888;
+}
+
+
+/*三级标题：分类标题*/
+
+.title_sort {
+	font-size: 12pt;
+	font-weight: 500;
+	color: #888888;
+}
+
+
+/*文本：*/
+
+
+/*一级文本：主要信息*/
+
+.content_main {
+	font-size: 14pt;
+	font-weight: 500;
+	color: #353535;
+}
+
+
+/*二级文本：大段信息、标签*/
+
+.content_minor {
+	font-size: 12pt;
+	font-weight: 500;
+	color: #353535;
+}
+
+
+/*三级文本：解释、补充*/
+
+.content_sort {
+	font-size: 8pt;
+	font-weight: 500;
+	color: #888888;
+}
+
+
+/*顶栏及选项卡*/
+
+#header-title {
+	height: 36px;
+	padding-top: 6px;
+	box-shadow: 0 5px 5px #ff9800;
+	-webkit-box-shadow: 0 5px 5px #ff9800;
+	z-index: 10;
+}
+
+#nav-title {
+	height: 24px;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+#nav-bar {
+	position: static;
+	margin-top: 36px;
+	height: 30px;
+	z-index: 5;
+}
+
+#nav-bar a {
+	height: 36px;
+}
+
+
+/*community CSS*/
+
+body {
+	margin: 0;
+}
+
+.community_image {
+	text-align: center;
+	margin-bottom: 15px;
+	width: 100%;
+	z-index: 5;
+}
+
+.community_image img {
+	width: 100%;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+}
+
+
+/*部门信息*/
+
+.department_title {
+	margin: 0px 20px 0px 20px;
+}
+
+.department_title_info {
+	margin: 0px 20px 8px 20px;
+}
+
+.department_scroll-view {
+	white-space: nowrap;
+	overflow-x: scroll;
+	padding-right: 10px;
+	-webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar {
+	width: 0px
+}
+
+.department_scroll-view-item {
+	display: inline-block;
+	width: 150px;
+	height: calc(170px+ 26pt);
+	margin: 10px 0 10px 10px;
+}
+
+.department_image {
+	width: 150px;
+	height: 150px;
+}
+
+.department_detail {
+	text-align: center;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.department_detail_info {
+	text-align: center;
+	margin-bottom: 1px;
+}
+
+
+/*社团公告*/
+
+.community_post {
+	margin-bottom: 80px;
+}
+
+.community_post_card {
+	width: calc(100% - 70px);
+	background-color: #fffddf;
+	margin: 10px 20px 20px 20px;
+	padding: 5px 15px 20px 15px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+
+.community_post_title {
+	color: #222222;
+	font-size: 20pt;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: -44px;
+	display: block;
+}
+
+.community_post_info {
+	color: #8f8f94;
+	font-size: 11pt;
+	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 0;
+	margin-left: -44px;
+	display: block;
+}
+
+.community_post_text {
+	text-indent: 2em;
+}
+
+
+/*people.hmtl*/
+
+.department_choose {
+	width: 100%;
+	height: 48px;
+	padding: 0px 0px 0px 0px;
+	white-space: nowrap;
+	display: flex;
+	padding: 0 3px 0 3px;
+	margin: 0;
+}
+
+.choose_tag {
+	text-align: center;
+	width: 25%;
+	height: 42px;
+	color: #e65100;
+	padding: 6px 2px 0px 2px;
+}
+
+.choose_tag button {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*信息卡片*/
+
+.people_group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.people_department {
+	width: calc(100% - 100px);
+	max-width: 420px;
+	padding: 0 0 0 15px;
+	font-weight: 700;
+}
+
+.people_card {
+	display: flex;
+	flex-direction: column;
+	width: calc(100% - 100px);
+	max-width: 350px;
+	margin-top: 12px;
+	padding: 10px 12px 10px 16px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+	border: solid #cccccc 1px;
+	background-color: #fff;
+}
+
+.people_name {
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: transform .4s;
+}
+
+.people_name .people_motion_icon {
+	transform: rotate(0deg);
+}
+
+.people_name.people_name_show .people_motion_icon {
+	transform: rotate(-180deg);
+}
+
+.people_name_word {
+	width: 28px;
+	height: 28px;
+	color: #ffffff;
+	font-weight: 900;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	background-image: url(../image/icon_people_HL.png);/*用户头像图片*/
+	background-size: 100% 100%;
+	background-color: #9999ff;
+}
+
+.people_name_text {
+	width: calc(100% - 90px);
+}
+
+.people_phone {
+	margin-top: 8px;
+}
+
+.people_phone_number,
+.people_phone_new {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 8px;
+	margin-bottom: 5px;
+}
+
+.phone_new_input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.people_phone_new .phone_new_input input {
+	border: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.phone_input_line {
+	content: " ";
+	height: 1px;
+	width: 90%;
+	background-color: #B0B0B0;
+	box-shadow: 0 0 2px #D0D0D0;
+	position: relative;
+    top: -5px;
+}
+
+.people_number_text {
+	height: 26pt;
+	width: calc(100% - 100px);
+}
+
+.people_number_info {
+	height: 10pt;
+	font-size: 9pt;
+	color: #888888;
+	display: block;
+}
+
+.people_info_card {
+	display: none;
+}
+
+.people_card .people_info_card_show {
+	display: block;
+}
+
+.people_info {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 14px;
+}
+
+.people_info_text {
+	width: calc(100% - 100px);
+	min-width: 130px;
+	font-size: 16px;
+}
+
+.people_info_text span {
+	margin: 0;
+	padding: 0;
+}
+
+.people_info_text text {
+	display: block;
+}
+
+.people_info_lasticon {
+	align-self: flex-end;
+}
+
+.people_phone_line {
+	content: " ";
+	height: 1px;
+	background-color: #D8D8D8;
+}
+
+.people_info_icon {
+	width: 22px;
+	height: 22px;
+	transform:scale(1,-1);
+	-webkit-transform: scale(1,-1);
+}
+
+.people_motion_icon {
+	width: 22px;
+	height: 22px;
+	transform:scale(1,-1);
+	-webkit-transform: scale(1,-1);
+}
