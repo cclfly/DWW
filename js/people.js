@@ -48,24 +48,24 @@
 		}, false);
 		
 		//↓点击箭头改类
-		mui('.people_name').on('tap', '.people_motion_icon', function(){
+		mui('.people_card').on('tap', '.people_name', function(){
 			//alert(this);
-			var oUse = this.getElementsByTagName('use')[0];
-			if(oUse.getAttribute('xlink:href') == "#ic_expand_more")
-			{
-				var oInfo = this.parentNode.parentNode.getElementsByClassName('people_info_card')[0];
+			//var oUse = this.getElementsByTagName('use')[0];
+			//if(oUse.getAttribute('xlink:href') == "#ic_expand_more")
+			//{
+				var oInfo = this.parentNode.getElementsByClassName('people_info_card')[0];
 				//this.parentNode.parentNode.lastChile
 				if(oInfo.classList.contains('people_info_card_show'))
 				{
 					oInfo.classList.remove('people_info_card_show');
-					this.parentNode.classList.remove('people_name_show');
+					this.classList.remove('people_name_show');
 				}
 				else
 				{
 					oInfo.classList.add('people_info_card_show');
-					this.parentNode.classList.add('people_name_show');
+					this.classList.add('people_name_show');
 				}
-			}
+			//}
 		});
 	});
 })(mui, document);
