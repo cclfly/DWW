@@ -1,91 +1,71 @@
-mui.init({
-	swipeBack: true //ÆôÓÃÓÒ»¬¹Ø±Õ¹¦ÄÜ
+ï»¿mui.init({
+	swipeBack: true //å¯ç”¨å³æ»‘å…³é—­åŠŸèƒ½
 });
 (function($, doc) {
 	$.init();
 	$.ready(function() {
-		//ÆÕÍ¨Ê¾Àı
+		//æ™®é€šç¤ºä¾‹
 		var departPicker = new $.PopPicker();
 		departPicker.setData([{
 			value: 'ywj',
-			text: '¶­ÊÂ³¤ Ò¶ÎÄ½à'
+			text: 'è‘£äº‹é•¿ å¶æ–‡æ´'
 		}, {
 			value: 'aaa',
-			text: '×Ü¾­Àí °¬AA'
+			text: 'æ€»ç»ç† è‰¾AA'
 		}, {
 			value: 'lj',
-			text: 'ÂŞ¼­'
+			text: 'ç½—è¾‘'
 		}, {
 			value: 'ymt',
-			text: 'ÔÆÌìÃ÷'
+			text: 'äº‘å¤©æ˜'
 		}, {
 			value: 'shq',
-			text: 'Ê·Ç¿'
+			text: 'å²å¼º'
 		}, {
 			value: 'zhbh',
-			text: 'ÕÂ±±º£'
+			text: 'ç« åŒ—æµ·'
 		}, {
 			value: 'zhy',
-			text: '×¯ÑÕ'
+			text: 'åº„é¢œ'
 		}, {
 			value: 'gyf',
-			text: '¹ØÒ»·«'
+			text: 'å…³ä¸€å¸†'
 		}, {
 			value: 'zhz',
-			text: 'ÖÇ×Ó'
+			text: 'æ™ºå­'
 		}, {
 			value: 'gezh',
-			text: '¸èÕß'
+			text: 'æ­Œè€…'
 		}]);
 		var showDepartPickerButton = doc.getElementById('showDepartPicker');
 		var departResult = doc.getElementById('departResult');
 		showDepartPickerButton.addEventListener('tap', function(event) {
 			departPicker.show(function(items) {
 				departResult.innerText = JSON.stringify(items[0]);
-				//·µ»Ø false ¿ÉÒÔ×èÖ¹Ñ¡Ôñ¿òµÄ¹Ø±Õ
+				//è¿”å› false å¯ä»¥é˜»æ­¢é€‰æ‹©æ¡†çš„å…³é—­
 				//return false;
 			});
 		}, false);
 		
-		
-		//
+		//â†“ç‚¹å‡»ç®­å¤´æ”¹ç±»
 		mui('.people_name').on('tap', '.people_motion_icon', function(){
 			//alert(this);
 			var oUse = this.getElementsByTagName('use')[0];
 			if(oUse.getAttribute('xlink:href') == "#ic_expand_more")
 			{
-				if(this.classList.contains('people_info_card_show'))
+				var oInfo = this.parentNode.parentNode.getElementsByClassName('people_info_card')[0];
+				//this.parentNode.parentNode.lastChile
+				if(oInfo.classList.contains('people_info_card_show'))
 				{
-					this.classList.remove('people_info_card_show');
+					oInfo.classList.remove('people_info_card_show');
 					this.parentNode.classList.remove('people_name_show');
 				}
 				else
 				{
-					this.classList.add('people_info_card_show');
+					oInfo.classList.add('people_info_card_show');
 					this.parentNode.classList.add('people_name_show');
 				}
 			}
 		});
-		/*var aMoreIcon = document.getElementsByClassName('people_motion_icon');
-		for(var i in aMoreIcon)
-		{
-			aMoreIcon[i].onclick = function(){
-				var oUse = this.getElementsByTagName('use')[0];
-				if(oUse.getAttribute('xlink:href') == "#ic_expand_more")
-				{
-					if(this.classList.contains('people_info_card_show'))
-					{
-						this.classList.remove('people_info_card_show');
-						this.parentNode.classList.remove('people_name_show');
-					}
-					else
-					{
-						this.classList.add('people_info_card_show');
-						this.parentNode.classList.add('people_name_show');
-					}
-				}
-				//alert(this);
-			};
-		}*/
 	});
 })(mui, document);
