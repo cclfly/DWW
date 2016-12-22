@@ -1,0 +1,596 @@
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/main.css" />
+
+<div class="department_choose">
+	<div class="choose_tag">
+		<button id='showDepartPicker' class="mui-btn mui-btn-block" type='button'>部门</button>
+		<div id='departResult' class="ui-alert"></div>
+	</div>
+	<div class="choose_tag">
+		<button id='showBrigadePicker' class="mui-btn mui-btn-block" type='button'>大队</button>
+		<div id='brigadeResult' class="ui-alert"></div>
+	</div>
+	<div class="choose_tag">
+		<button id='showGradePicker' class="mui-btn mui-btn-block" type='button'>年级</button>
+		<div id='gradeResult' class="ui-alert"></div>
+	</div>
+	<div class="choose_tag">
+		<button id='showMajorPicker' class="mui-btn mui-btn-block" type='button'>专业</button>
+		<div id='majorResult' class="ui-alert"></div>
+	</div>
+</div>
+
+<!--部门分类是用定位还是筛选-->
+<div class="people_group">
+	<!--根据上面的部门进行显示，添加style:"display:none;"-->
+	<div class="people_department title_sort">
+		<span>{技术部}
+			</div>
+			<div class="people_card content_main">
+				<div class="people_name"><!--改变.people_name_show' or ''-->
+					<div class="people_name_word"><span>姓</span>
+	</div>
+	<span class="people_name_text">{姓名}</span>
+	<svg class="people_motion_icon">
+		<use xlink:href="#ic_expand_more"></use>
+	</svg>
+	<!--改变.people_info_card_show' or ''-->
+</div>
+<div class="people_info_card">
+	<div class="people_phone">
+		<div class="people_phone_line"></div>
+		<div class="people_phone_number">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_call"></use>/></svg>
+			<div class="peole_number">
+				<span class="people_number_text">{13123456789}</span>
+				<span class="people_number_info">由[name]于[time]添加</span>
+			</div>
+			<svg class="people_motion_icon">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+		<div class="people_phone_number">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_call"></use>/></svg>
+			<div class="peole_number">
+				<span class="people_number_text">{13123456789}</span>
+				<span class="people_number_info">由[name]于[time]添加</span>
+			</div>
+			<svg class="people_motion_icon">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+		<div class="people_phone_new">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_add"></use>
+			</svg>
+			<div class="phone_new_input">
+				<input type="text" value="请输入新号码" />
+				<div class="phone_input_line"></div>
+			</div>
+			<svg class="people_motion_icon">
+				<use xlink:href="#ic_done"></use>
+			</svg>
+			<!--确定添加，用tap不用click-->
+		</div>
+	</div>
+	<div class="people_phone_line"></div>
+	<div class="people_info">
+		<svg class="people_info_icon">
+			<use xlink:href="#ic_account_box"></use>
+		</svg>
+		<div class="people_info_text">
+			<span>年级:{2013}</span><br />
+			<span>大队:{八大队}</span><br />
+			<span>区队:{二区队}</span><br />
+			<span>专业:{计算机科学与技术}</span><br />
+			<span>学号:{1234567890}</span><br />
+		</div>
+		<svg class="people_motion_icon" style="align-self: flex-end;">
+			<use xlink:href="#ic_copy"></use>
+		</svg>
+		<!--复制，用tap不用click-->
+	</div>
+</div>
+</div>
+
+<div class="people_card content_main">
+	<div class="people_name">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+<div class="people_card content_main">
+	<div class="people_name">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+<div class="people_card content_main">
+	<div class="people_name ">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+<div class="people_card content_main">
+	<div class="people_name ">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+<div class="people_card content_main">
+	<div class="people_name ">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+<div class="people_card content_main">
+	<div class="people_name ">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+<div class="people_card content_main">
+	<div class="people_name ">
+		<div class="people_name_word"><span>姓</span>
+		</div>
+		<span class="people_name_text">{姓名}</span>
+		<svg class="people_motion_icon">
+			<use xlink:href="#ic_expand_more"></use>
+		</svg>
+		<!--改变.people_info_card_show' or ''-->
+	</div>
+	<div class="people_info_card">
+		<div class="people_phone">
+			<div class="people_phone_line"></div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_number">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_call"></use>/></svg>
+				<div class="peole_number">
+					<span class="people_number_text">{13123456789}</span>
+					<span class="people_number_info">由[name]于[time]添加</span>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_copy"></use>
+				</svg>
+				<!--复制，用tap不用click-->
+			</div>
+			<div class="people_phone_new">
+				<svg class="people_info_icon">
+					<use xlink:href="#ic_add"></use>
+				</svg>
+				<div class="phone_new_input">
+					<input type="text" value="请输入新号码" />
+					<div class="phone_input_line"></div>
+				</div>
+				<svg class="people_motion_icon">
+					<use xlink:href="#ic_done"></use>
+				</svg>
+				<!--确定添加，用tap不用click-->
+			</div>
+		</div>
+		<div class="people_phone_line"></div>
+		<div class="people_info">
+			<svg class="people_info_icon">
+				<use xlink:href="#ic_account_box"></use>
+			</svg>
+			<div class="people_info_text">
+				<span>年级:{2013}</span><br />
+				<span>大队:{八大队}</span><br />
+				<span>区队:{二区队}</span><br />
+				<span>专业:{计算机科学与技术}</span><br />
+				<span>学号:{1234567890}</span><br />
+			</div>
+			<svg class="people_motion_icon" style="align-self: flex-end;">
+				<use xlink:href="#ic_copy"></use>
+			</svg>
+			<!--复制，用tap不用click-->
+		</div>
+	</div>
+</div>
+
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.js"></script>
+<script src="js/mui.poppicker.js"></script>
+<script src="js/people.js"></script>
