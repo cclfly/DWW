@@ -220,7 +220,13 @@
 					"community.html",
 					"tab-webview-subpage-about.html",
 					"js/mui.picker.js",
-					"js/mui.poppicker.js"
+					"js/mui.poppicker.js",
+					"image/icon_people_HL.png",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"js/people.js",
+					"css/main.css",
+					"css/mui.min.css"
 				],
 				"refer": [
 					"tab-webview-subpage-setting.html"
@@ -241,15 +247,22 @@
 				"refer": [
 					"tab-webview-subpage-setting.html",
 					"tab-webview-subpage-chat.html",
-					"tab-webview-subpage-contact.html"
+					"tab-webview-subpage-contact.html",
+					"mine.html"
 				],
+				"priority": 0
+			},
+			"tab-webview-subpage-setting.html": {
+				"resources": [
+					"fonts/mui.ttf"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
 				"image/icon_ming_HL.png",
-				"image/icon_people_HL.png",
 				"image/ic_person_grey.svg",
 				"image/ic_done_grey.svg",
 				"css/mui.css",

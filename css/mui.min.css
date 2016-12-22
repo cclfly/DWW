@@ -17,8 +17,8 @@ html {
 	Tahoma,
 	Helvetica, 
 	'Hiragino Sans GB', 
-	/*'Microsoft Yahei', 
-	'微软雅黑', */
+	'Microsoft Yahei', 
+	'微软雅黑', 
 	Arial, sans-serif;
 	-webkit-text-size-adjust: 100%
 }
@@ -702,7 +702,6 @@ p {
 }
 
 .mui-off-canvas-wrap .mui-bar {
-	position: absolute!important;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 	-webkit-box-shadow: none;
@@ -1363,14 +1362,21 @@ input[type=submit]:enabled:active {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	color: #707070;/*菜单颜色 */
-	transform: color 1s ease 0;
+}
+.mui-bar-tab .mui-tab-item svg{
+	fill: #707070;
+	transform:scale(1,-1);
+	transition: fill 1s;
 }
 .mui-bar-tab .mui-tab-item .mui-icon{
 	font-size: 24px;
 }
 .mui-bar-tab .mui-tab-item.mui-active {
 	color: #FFFFFF;/*菜单选中时颜色 */
-	transform: color 1s ease 0;
+}
+.mui-bar-tab .mui-tab-item.mui-active svg{
+	fill: #FFFFFF;/*菜单选中时颜色 */
+	transition: fill 1s;
 }
 .mui-bar-tab .mui-tab-item.mui-active .mui-icon{
 	font-size: 28px;

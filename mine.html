@@ -2,20 +2,13 @@
 <html>
 
 	<head>
-		<meta charset="utf-8">
-		<title>sttxl</title>
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-		<link rel="stylesheet" href="css/mui.min.css">
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
-		<style>
-			html,
-			body {
-				background-color: #EFEFF4;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -68,6 +61,9 @@
 				<symbol id="ic_checkbox-yes" viewBox="-50 -50 100 100">
 					<path d="M38.9,50h-77.8C-45.1,50-50,45-50,38.9v-77.8C-50-45-45.1-50-38.9-50h77.8C45.1-50,50-45,50-38.9v77.8
 		C50,45,45.1,50,38.9,50z M-11.1-27.8L-38.9,0l7.8,7.8l19.9-19.9l42.2,42.2l7.8-7.9L-11.1-27.8z" />
+				</symbol>
+				<symbol id="ic_close" viewBox="-50 -50 100 100">
+					<path d="M50,39.9L39.9,50L0,10.1L-39.9,50L-50,39.9L-10.1,0L-50-39.9L-39.9-50L0-10.1L39.9-50L50-39.9L10.1,0L50,39.9z"></path>
 				</symbol>
 				<symbol id="ic_copy" viewBox="-43.2 -50 86.4 100">
 					<path class="st0" d="M20.5,50h-54.5c-5,0-9.1-4.1-9.1-9.1v-63.6h9.1v63.6h54.5V50z M34.1,31.8h-50c-5,0-9.1-4.1-9.1-9.1v-63.6
@@ -191,195 +187,110 @@
 			</svg>
 		</div>
 
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
-			<!--菜单部分-->
-			<aside id="offCanvasSide" class="mui-off-canvas-left">
-				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<div class="title">侧滑导航</div>
-						<div class="content">
-							这是可拖动式侧滑菜单示例，你可以在这里放置任何内容；关闭侧滑菜单有多种方式： 1.在手机屏幕任意位置向右拖动(drag)；2.点击本侧滑菜单页之外的任意位置; 3.点击如下红色按钮； 4.Android手机按back键; 5.And手机按menu键。
+		<div class="mine_circular">
+			<!--没有新添加号码时添加.mine_circular_blank隐藏-->
+			<div class="mine_circular_new mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner circular_new_text">
+						<p class="content_main">{name}为你添加了手机号：</p>
+						<p class="ming_new_number title_minor">{13312345678}</p>
+					</div>
+					<div class="mine_circular_button content_main">
+						<div class="circular_button_done">
+							<span>确认</span>
+							<!--svg><use xlink:href="#ic_done"></use></svg-->
+						</div>
+						<div class="circular_button_line"></div>
+						<div class="circular_button_close">
+							<span>拒绝
+							</span>
 						</div>
 					</div>
-			</aside>
-
-			<div class="mui-inner-wrap">
-				<header id="header-title" class="mui-bar mui-bar-nav">
-					<a id="offCanvasBtn" href="#offCanvasSide" class="">
-						<svg class="people_motion_icon">
-							<use xlink:href="#ic_menu"></use>
-						</svg>
-					</a>
-					<span id="nav-title" class="mui-title ">社团通讯录</span>
-				</header>
-				<nav id="nav-bar" class="mui-bar mui-bar-tab">
-					<a id="defaultTab" class="mui-tab-item mui-active" href="community.html">
-						<svg class="mui-icon">
-							<use xlink:href="#ic_assignment"></use>
-						</svg>
-					</a>
-					<a class="mui-tab-item" href="people.html">
-						<svg class="mui-icon">
-							<use xlink:href="#ic_people"></use>
-						</svg>
-					</a>
-					<a class="mui-tab-item" href="mine.html">
-						<svg class="mui-icon">
-							<use xlink:href="#ic_assignment_ind"></use>
-						</svg>
-					</a>
-				</nav>
-				<!-- off-canvas backdrop -->
-				<div class="mui-off-canvas-backdrop"></div>
-			
-			<script src="js/mui.min.js"></script>
-			<script type="text/javascript" charset="utf-8">
-				//mui初始化
-				mui.init();
-				var subpages = ['people.html', 'community.html', 'mine.html'];
-				var subpage_style = {
-					top: '72px',
-					bottom: '0px',
-					left: '{}px'
-				};
-
-				var aniShow = {};
-
-				//创建子页面，首个选项卡页面显示，其它均隐藏；
-				mui.plusReady(function() {
-					var self = plus.webview.currentWebview();
-					for(var i = 0; i < 4; i++) {
-						var temp = {};
-						var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-						if(i > 0) {
-							sub.hide();
-						} else {
-							temp[subpages[i]] = "true";
-							mui.extend(aniShow, temp);
-						}
-						self.append(sub);
-					}
-				});
-				//当前激活选项
-				var activeTab = subpages[0];
-				var title = document.getElementById("nav-title");
-				//选项卡点击事件
-				mui('.mui-bar-tab').on('tap', 'a', function(e) {
-					var targetTab = this.getAttribute('href');
-					if(targetTab == activeTab) {
-						return;
-					}
-					//更换标题
-					//title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
-					//显示目标选项卡
-					//若为iOS平台或非首次显示，则直接显示
-					if(mui.os.ios || aniShow[targetTab]) {
-						plus.webview.show(targetTab);
-					} else {
-						//否则，使用fade-in动画，且保存变量
-						var temp = {};
-						temp[targetTab] = "true";
-						mui.extend(aniShow, temp);
-						plus.webview.show(targetTab, "fade-in", 300);
-					}
-					//隐藏当前;
-					plus.webview.hide(activeTab);
-					//更改当前活跃的选项卡
-					activeTab = targetTab;
-				});
-				//自定义事件，模拟点击“首页选项卡”
-				document.addEventListener('gohome', function() {
-					var defaultTab = document.getElementById("defaultTab");
-					//模拟首页点击
-					mui.trigger(defaultTab, 'tap');
-					//切换选项卡高亮
-					var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
-					if(defaultTab !== current) {
-						current.classList.remove('mui-active');
-						defaultTab.classList.add('mui-active');
-					}
-				});
-				//侧滑菜单
-				mui.init({
-					swipeBack: false,
-				});
-				//侧滑容器父节点
-				var offCanvasWrapper = mui('#offCanvasWrapper');
-				//主界面容器
-				var offCanvasInner = offCanvasWrapper[0].querySelector('.mui-inner-wrap');
-				//菜单容器
-				var offCanvasSide = document.getElementById("offCanvasSide");
-				//Android暂不支持整体移动动画
-				if(!mui.os.android) {
-					document.getElementById("move-togger").classList.remove('mui-hidden');
-					var spans = document.querySelectorAll('.android-only');
-					for(var i = 0, len = spans.length; i < len; i++) {
-						spans[i].style.display = "none";
-					}
-				}
-				//移动效果是否为整体移动
-				var moveTogether = false;
-				//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
-				var classList = offCanvasWrapper[0].classList;
-				//变换侧滑动画移动效果；
-				mui('.mui-input-group').on('change', 'input', function() {
-					if(this.checked) {
-						offCanvasSide.classList.remove('mui-transitioning');
-						offCanvasSide.setAttribute('style', '');
-						classList.remove('mui-slide-in');
-						classList.remove('mui-scalable');
-						switch(this.value) {
-							case 'main-move':
-								if(moveTogether) {
-									//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-									offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-									moveTogether = false;
-								}
-								break;
-							case 'main-move-scalable':
-								if(moveTogether) {
-									//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-									offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-								}
-								classList.add('mui-scalable');
-								break;
-							case 'menu-move':
-								classList.add('mui-slide-in');
-								break;
-							case 'all-move':
-								moveTogether = true;
-								//整体滑动时，侧滑菜单在inner-wrap内
-								offCanvasInner.insertBefore(offCanvasSide, offCanvasInner.firstElementChild);
-								break;
-						}
-						offCanvasWrapper.offCanvas().refresh();
-					}
-				});
-				document.getElementById('offCanvasShow').addEventListener('tap', function() {
-					offCanvasWrapper.offCanvas('show');
-				});
-				document.getElementById('offCanvasHide').addEventListener('tap', function() {
-					offCanvasWrapper.offCanvas('close');
-				});
-				//主界面和侧滑菜单界面均支持区域滚动；
-				mui('#offCanvasSideScroll').scroll();
-				mui('#offCanvasContentScroll').scroll();
-				//实现ios平台的侧滑关闭页面；
-				if(mui.os.plus && mui.os.ios) {
-					offCanvasWrapper[0].addEventListener('shown', function(e) { //菜单显示完成事件
-						plus.webview.currentWebview().setStyle({
-							'popGesture': 'none'
-						});
-					});
-					offCanvasWrapper[0].addEventListener('hidden', function(e) { //菜单关闭完成事件
-						plus.webview.currentWebview().setStyle({
-							'popGesture': 'close'
-						});
-					});
-				}
-			</script>
+				</div>
 			</div>
 		</div>
+
+		<div class="mine_people_card">
+			<div class="people_card people_card_show content_main">
+				<div class="people_name">
+					<span class="mine_people_name">一二三四五六七八</span>
+				</div>
+				<div class="people_info_card people_info_card_show">
+					<div class="people_phone">
+						<div class="people_phone_line"></div>
+						<div class="people_phone_number">
+							<svg class="people_info_icon">
+								<use xlink:href="#ic_call"></use>/></svg>
+							<div class="peole_number">
+								<span class="people_number_text">13123456789</span>
+								<span class="people_number_info">由[name]于2016/12/19添加</span>
+							</div>
+							<svg class="people_motion_icon">
+								<use xlink:href="#ic_delete"></use>
+							</svg>
+							<!--删除此条，用tap不用click-->
+						</div>
+						<div class="people_phone_number">
+							<svg class="people_info_icon">
+								<use xlink:href="#ic_call"></use>/></svg>
+							<div class="peole_number">
+								<span class="people_number_text">13123456789</span>
+								<span class="people_number_info">由[name]于[time]添加</span>
+							</div>
+							<svg class="people_motion_icon">
+								<use xlink:href="#ic_delete"></use>
+							</svg>
+							<!--删除此条，用tap不用click-->
+						</div>
+						<div class="people_phone_new">
+							<svg class="people_info_icon">
+								<use xlink:href="#ic_add"></use>
+							</svg>
+							<div class="phone_new_input">
+								<input type="text" value="请输入新号码" />
+								<div class="phone_input_line"></div>
+							</div>
+							<svg class="people_motion_icon">
+								<use xlink:href="#ic_done"></use>
+							</svg>
+							<!--确定添加，用tap不用click，弹出确认-->
+						</div>
+					</div>
+					<div class="people_phone_line"></div>
+					<div class="people_info">
+						<svg class="people_info_icon">
+							<use xlink:href="#ic_account_box"></use>
+						</svg>
+						<div class="people_info_text">
+							<span>年级:<!--swiper 选择器-->
+								<button id="people_grade" class="people_info_grade" type="button">{2013}
+									</button><div class="phone_input_line"></div>
+							</span>
+							<span>大队:<!--swiper 选择器-->
+								<button id="people_grade" class="people_info_grade" type="button">{八大队}
+									</button><div class="phone_input_line"></div>
+							</span>
+							<span>区队:<!--swiper 选择器-->
+								<button id="people_grade" class="people_info_grade" type="button">{二区队}
+									</button><div class="phone_input_line"></div>
+							</span>
+							<span>专业:<!--swiper 选择器-->
+								<button id="people_grade" class="people_info_grade" type="button">计算机科学与技术
+									</button><div class="phone_input_line"></div>
+							</span>
+							<span>学号:<input type="text" value="{1234567890}" />
+								</button><div class="phone_input_line"></div></span><br />
+						</div>
+						<svg class="people_motion_icon" style="align-self: flex-end;">
+							<use xlink:href="#ic_done"></use>
+						</svg>
+						<!--确定更改，用tap不用click，弹出确认-->
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 	</body>
 
 </html>

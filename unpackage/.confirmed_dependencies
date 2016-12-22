@@ -27,7 +27,13 @@
 			"community.html",
 			"tab-webview-subpage-about.html",
 			"js/mui.picker.js",
-			"js/mui.poppicker.js"
+			"js/mui.poppicker.js",
+			"image/icon_people_HL.png",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/people.js",
+			"css/main.css",
+			"css/mui.min.css"
 		],
 		"refer": [
 			"tab-webview-subpage-setting.html",
@@ -51,7 +57,13 @@
 			"tab-webview-subpage-chat.html",
 			"tab-webview-subpage-contact.html",
 			"people.html",
-			"community.html"
+			"community.html",
+			"mine.html"
+		]
+	},
+	"tab-webview-subpage-setting.html": {
+		"resources": [
+			"fonts/mui.ttf"
 		]
 	}
 }
