@@ -61,7 +61,7 @@
 
 .content_minor {
 	font-size: 12pt;
-	font-weight: 500;
+	font-weight: 400;
 	color: #353535;
 }
 
@@ -102,9 +102,11 @@
 #nav-bar a {
 	height: 36px;
 }
-#header-title svg{
-	fill:#F0F0F0;
+
+#header-title svg {
+	fill: #F0F0F0;
 }
+
 
 /*community CSS*/
 
@@ -256,10 +258,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	width: calc(100% - 20px);
-    min-width: 230px;
-    max-width: 450px;
+	min-width: 230px;
+	max-width: 450px;
 	margin-top: 12px;
-	padding: 10px 12px 10px 16px;
+	padding: 10px 16px 10px 16px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
 	border: solid #cccccc 1px;
 	background-color: #fff;
@@ -349,15 +351,20 @@ body {
 }
 
 .people_number_info {
-	height: 10pt;
+	height: 12pt;
 	font-size: 9pt;
 	font-weight: 400;
 	color: #888888;
 	display: block;
+	overflow: hidden;
+	-ms-overflow: hidden;
 }
 
 .people_info_card {
 	max-height: 0;
+	width: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
 	visibility: hidden;
 	opacity: 0;
 	transition: max-height .5s ease-in-out;
@@ -438,7 +445,7 @@ body {
 
 .circular_new_text {
 	text-align: center;
-	height: 74px;
+	height: 106px;
 	padding: 10px 10% 1px 10%;
 }
 
@@ -493,10 +500,12 @@ body {
 	width: 100%;
 	text-align: center;
 }
-.mine_people_card .people_info .people_info_text span{
+
+.mine_people_card .people_info .people_info_text span {
 	display: block;
 	margin-bottom: 5px;
 }
+
 .mine_people_card .people_info .people_info_text span button,
 .mine_people_card .people_info .people_info_text span input {
 	height: 23px;
@@ -508,10 +517,127 @@ body {
 	margin-bottom: 5px;
 	border: none;
 }
-.mine_people_card .people_info_text span div{
+
+.mine_people_card .people_info_text span div {
 	width: calc(100% - 40px);
 	margin-left: 40px;
 }
-.mine_people_card .people_phone_number .people_motion_icon{
+
+.mine_people_card .people_phone_number .people_motion_icon {
 	fill: #FF4141;
 }
+
+
+/*Regist.html*/
+
+.regist_card .people_card {
+	align-items: center;
+}
+
+.regist_card .people_name {
+	height: 38px;
+	flex-direction: column;
+	margin: auto;
+}
+
+.regist_card .people_name .people_number_info {
+	font-weight: 300;
+}
+
+.regist_card .people_name .phone_input_line {
+	top: 2px;
+}
+
+.regist_card .people_phone div {
+	justify-content: space-around;
+}
+
+.regist_card .people_phone .people_phone_number div,
+.regist_card .people_phone .people_phone_new div {
+	min-width: 176px;
+}
+
+.regist_card .people_phone .people_phone_number input,
+.regist_card .people_phone_new .phone_new_input input {
+	width: 180px;
+	border: none;
+	font-weight: 400;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.regist_card .people_info {
+	justify-content: space-around;
+}
+
+.regist_card .people_info .people_info_text {
+	min-width: 160px;
+}
+
+.regist_card .people_card .people_info_card .people_info_text input {
+	font-weight: 400;
+}
+
+.regist_card_button {
+	display: flex;
+	justify-content: center;
+}
+
+.regist_card_button button {
+	height: 28px;
+	width: 80%;
+	margin-top: 6px;
+	border: none;
+	background-color: #FF6D00;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.regist_card_button svg {
+	fill: #F3F3F3;
+}
+
+
+/*new_community.html*/
+.new_community_card .people_card .people_name{
+	height: 26px;
+	margin-top: 6px;
+	flex: initial;
+}
+.new_community_card .people_info_card .people_phone_number select{
+	border-radius: 1px;
+	font-size: 15px;
+	font-weight: 400;
+	text-align: center;
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(0,0,0,0);
+}
+.community_verifi_icon{
+	width: 28px;
+	height: 28px;
+}
+.new_community_verifi{
+	font-weight: 400;
+	border: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.community_verifi_question{
+	height: 36px;
+}
+.new_community_card .people_phone_number{
+	height: 100%;	
+}
+.my_added_community .people_phone_number{
+	margin-top: 18px;
+	height: 32px;
+}
+.my_added_community .people_phone_number div span{
+	text-align: left;
+}
+

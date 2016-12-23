@@ -2485,7 +2485,7 @@ select {
 	font-size: 14px;
 	height: auto;
 	margin-top: 1px;
-	border: 0!important;
+	border: 0;
 	background-color: #fff
 }
 

@@ -13,7 +13,7 @@
 		<title>people</title>
 	</head>
 
-	<body>
+	<body style="z-index: 1;">
 		<div style="display: none;">
 			<svg xml version="1.0" encoding="utf-8" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 				<symbol id="ic_account_box" viewBox="-50 -50 100 100">
@@ -47,6 +47,9 @@
 				<symbol id="ic_balance" viewBox="-50 -50 100 100">
 					<path class="st0" d="M-39.5,7.1v-33.3h15.8V7.1H-39.5z M-7.9,7.1v-33.3H7.9V7.1H-7.9z M-50-50H50v14.3H-50V-50z M23.7,7.1v-33.3
 		h15.8V7.1H23.7z M0,50l-50-23.8v-9.5H50v9.5L0,50z" />
+				</symbol>
+				<symbol id="blackbox" viewBox="-50 -50 100 100">
+					<rect x="-50" y="-50" width="100" height="100" transform="matrix(1 0 0 -1 0 0)"></rect>
 				</symbol>
 				<symbol id="ic_call" viewBox="-50 -50 100 100">
 					<path class="st0" d="M-29.9,6.7C-21.9-9-9-21.8,6.7-29.9l12.2,12.2c1.5,1.5,3.7,2,5.7,1.3c6.2-2.1,12.9-3.2,19.8-3.2
@@ -204,10 +207,6 @@
 
 		<!--部门分类是用定位还是筛选-->
 		<div class="people_group">
-			<!--根据上面的部门进行显示，添加style:"display:none;"-->
-			<div class="people_department title_sort">
-				<span>{技术部}
-			</div>
 			<div class="people_card content_main">
 				<div class="people_name"><!--改变.people_name_show' or ''-->
 					<div class="people_name_word"><span>姓</span>
@@ -217,7 +216,7 @@
 				</div>
 				<div class="people_info_card">
 					<div class="people_phone">
-						<div class="people_phone_line"></div>
+						<div class="people_phone_line line_long"></div>
 						<div class="people_phone_number">
 							<svg class="people_info_icon"><use xlink:href="#ic_call" ></use>/></svg>
 							<div class="peole_number">
@@ -263,7 +262,7 @@
 				<div class="people_name">
 					<div class="people_name_word"><span>姓</span>
 					</div>
-					<span class="people_name_text">{姓名}</span>
+					<span class="people_name_text">一二三四五六七八</span>
 					<svg class="people_motion_icon"><use xlink:href="#ic_expand_more" ></use></svg><!--改变.people_info_card_show' or ''-->
 				</div>
 				<div class="people_info_card">
@@ -272,15 +271,15 @@
 						<div class="people_phone_number">
 							<svg class="people_info_icon"><use xlink:href="#ic_call" ></use>/></svg>
 							<div class="peole_number">
-								<span class="people_number_text">{13123456789}</span>
-								<span class="people_number_info">由[name]于[time]添加</span>
+								<span class="people_number_text">13123456789</span>
+								<span class="people_number_info">由[name]于2016/12/19添加</span>
 							</div>
 							<svg class="people_motion_icon"><use xlink:href="#ic_copy" ></use></svg><!--复制，用tap不用click-->
 						</div>
 						<div class="people_phone_number">
 							<svg class="people_info_icon"><use xlink:href="#ic_call" ></use>/></svg>
 							<div class="peole_number">
-								<span class="people_number_text">{13123456789}</span>
+								<span class="people_number_text">13123456789</span>
 								<span class="people_number_info">由[name]于[time]添加</span>
 							</div>
 							<svg class="people_motion_icon"><use xlink:href="#ic_copy" ></use></svg><!--复制，用tap不用click-->
@@ -298,11 +297,11 @@
 					<div class="people_info">
 						<svg class="people_info_icon"><use xlink:href="#ic_account_box" ></use></svg>
 						<div class="people_info_text">
-							<span>年级:{2013}</span><br />
-							<span>大队:{八大队}</span><br />
-							<span>区队:{二区队}</span><br />
-							<span>专业:{计算机科学与技术}</span><br />
-							<span>学号:{1234567890}</span><br />
+							<span>年级:2013</span><br />
+							<span>大队:八大队</span><br />
+							<span>区队:二区队</span><br />
+							<span>专业:计算机科学与技术</span><br />
+							<span>学号:1234567890</span><br />
 						</div>
 						<svg class="people_motion_icon" style="align-self: flex-end;"><use xlink:href="#ic_copy" ></use></svg><!--复制，用tap不用click-->
 					</div>
