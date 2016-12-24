@@ -283,7 +283,9 @@
 					"image/jdzs.png",
 					"extract-people.html",
 					"extract-mine.html",
-					"extract-community.html"
+					"extract-community.html",
+					"extract-svg.html",
+					"js/loadsvg.js"
 				],
 				"refer": [],
 				"priority": 0
