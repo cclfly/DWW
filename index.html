@@ -4,16 +4,33 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title></title>
-		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/mui.min.css" />
 		<link rel="stylesheet" href="css/mui.picker.css" />
 		<link rel="stylesheet" href="css/mui.poppicker.css" />
-		
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js" ></script>
+		<link rel="stylesheet" href="css/main.css" />
+
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/mui.min.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			mui.init();
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			mui.ready(function() {
+				mui('#nav-bar').on('tap', 'a', function(e) {
+					mui.ajax(this.getAttribute('href'), {
+						success: function(data) {
+							//mui('.mui-scroll').dom(data);
+							$('#main').html(data);
+						}
+					});
+				});
+			});
 		</script>
 	</head>
 
@@ -235,18 +252,7 @@
 				<div class="mui-off-canvas-backdrop"></div>
 			</div>
 		</div>
-		
-		<script>
-		mui('#nav-bar').on('tap', 'a', function(e){
-			mui.ajax(this.getAttribute('href'), {
-				success: function(data){
-					//mui('.mui-scroll').dom(data);
-					$('#main').html(data);
-				}
-			});
-		});
-		</script>
-		
+
 	</body>
 
 </html>

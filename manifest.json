@@ -281,7 +281,16 @@
 					"image/jdzs_c_2.jpg",
 					"image/jdzs_c_3.jpg",
 					"image/jdzs.png",
-					"extract-people.html"
+					"extract-people.html",
+					"extract-mine.html",
+					"extract-community.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"extract-people.html": {
+				"resources": [
+					"js/people.js"
 				],
 				"refer": [],
 				"priority": 0

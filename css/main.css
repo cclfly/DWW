@@ -94,7 +94,7 @@
 }
 
 #nav-bar {
-	position: static;
+	*position: static;
 	height: 30px;
 	z-index: 5;
 }
