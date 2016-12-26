@@ -193,6 +193,7 @@ body {
 .community_post_title {
 	color: #222222;
 	font-size: 20pt;
+	line-height: 20pt;
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -214,6 +215,18 @@ body {
 	text-indent: 2em;
 }
 
+
+.community_composition span{
+	height: 20px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-bottom: 5px;
+	color: #8F8F94;
+	font-size: 14px;
+	display: inline-block;
+	background-color: #F0F0F0;
+	border-radius: 20px;
+}
 
 /*people.hmtl*/
 
@@ -426,7 +439,79 @@ body {
 	transform: scale(1, -1);
 	-webkit-transform: scale(1, -1);
 }
-
+/*社团信息*/
+.community_info_show{
+    margin: 10px;
+}
+.community_info_show .mui-card-footer{
+	padding: 0;
+}
+.community_info_card{
+	width: 100%;
+}
+.community_info_card .mui-card-header{
+	display: block;
+	padding: 10px 15px 6px 15px;
+}
+.community_info_title{
+	width: 100%;
+	color: #242424;
+	font-size: 14pt;
+	font-weight: 500;
+	text-align: center;
+}
+.community_info_card p{
+	margin-bottom: 5px;
+}
+.community_composition .community_info_hidden{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.community_composition span{
+	height: 30px;
+	line-height: 30px;
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-bottom: 5px;
+	color: #F9F9F9;
+	font-size: 16px;
+	display: inline-block;
+	background-color: #F0AD4E;
+	border-radius: 20px;
+}
+.community_member p{
+	display: flex;
+	justify-content: center;
+}
+.community_member_duties{
+	width: 50%;
+	display: inline-block;
+	text-align: right;
+}
+.community_member_name{
+	width: calc(50% - 1.5em);
+	display: inline-block;
+	text-align: left;
+}
+.new_community_info{
+	width: 25px;
+    height: 25px;
+	margin: auto;
+}
+.mui-card-footer svg{
+	width: 25px;
+    height: 25px;
+    fill: #707070;
+    transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+}
+.community_info_show .mui-card-footer:before{
+	height: 0;
+}
 
 /*mine.html*/
 
@@ -641,3 +726,78 @@ body {
 	text-align: left;
 }
 
+/*community_info.html*/
+.post_title_change{
+	width: 80%;
+	margin-left: 0;
+}
+.post_title_change textarea{
+	height: 30px;
+	font-size: 22px;
+	text-align: center;
+	margin: 0;
+	padding: 10px;
+	padding-bottom: 0;
+	border: none;
+}
+.post_title_change .people_phone_line{
+	background-color: #B0B0B0;
+	box-shadow: 0 0 2px #D0D0D0;
+}
+.community_post_change .community_post_text{
+	text-indent: 0;
+}
+.community_post_text textarea{
+	margin: 0;
+}
+.community_post_action{
+	width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.community_post_action_new{
+	justify-content: center;
+}
+
+.mui-card .community_image_change{
+	margin: 0;
+	margin-bottom: -10px;
+}
+.community_image_change a{
+	width: 100%;
+	position: absolute;);
+	z-index: 20;
+}
+.community_image_change svg{
+	fill: #727272;
+	width: 10%;
+	min-width: 25px;
+	max-width: 50px;
+	transform: scale(1,-1);
+	-webkit-transform: scale(1,-1);
+}
+.community_info_textarea + img{
+	opacity: 0.5;
+}
+.community_info_textarea{
+	text-indent: 0;
+}
+.community_info_textarea p{
+	font-size: 13px;
+	margin: 0;
+	margin-left: 10px;
+	display: inline-block;
+}
+.community_info_show textarea{
+	margin: 0;
+	padding: 5px;
+}
+/*变更社团信息*/
+.community_info_textarea{
+	display: none;
+}
+/*.community_info_hidden{
+	display: none;
+}*/
