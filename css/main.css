@@ -129,49 +129,54 @@ body {
 .community_info {
 	margin: auto;
 }
-
-
-/*部门信息*/
-
-.department_title_info {
-	margin: 0 20px 0 20px;
-}
-
-.department_scroll-view {
-	white-space: nowrap;
-	overflow-x: scroll;
-	padding-right: 10px;
-	-webkit-overflow-scrolling: touch;
-}
-
 ::-webkit-scrollbar {
 	width: 0;
 	height: 0;
 }
 
-.department_scroll-view-item {
+/*社团链接*/
+.community_link_title span{
+	width: 100%;
+	color: #323232;
+	font-size: 20pt;
+    line-height: 23pt;
+    text-align: center;
+    display: block;
+}
+.community_link_show_div{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.community_link_show{
+	width: 45%;
+	min-width: 150px;
+	height: 60px;
+	margin: 1px;
 	display: inline-block;
-	width: 150px;
-	height: calc(170px+ 26pt);
-	margin: 10px 0 10px 10px;
 }
-
-.department_image {
-	width: 150px;
-	height: 150px;
+.community_link_show a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: solid 1px #ACACB4;
+	border-radius: 5px;
 }
-
-.department_detail {
+.community_link_show img{
+	width: 58px;
+	height: 58px;
+	display: inline-block;
+}
+.community_link_show span{
+	width: 80px;
+	height: 24px;
+	color: #727272;
+	font-size: 18px;
+	font-weight: 400;
 	text-align: center;
-	margin-top: 1px;
-	margin-bottom: 1px;
+	border-bottom: solid 1px #ACACB4;
+	display: inline-block;
 }
-
-.department_detail_info {
-	text-align: center;
-	margin-bottom: 1px;
-}
-
 
 /*社团公告*/
 
@@ -217,14 +222,18 @@ body {
 
 
 .community_composition span{
-	height: 20px;
+	height: 30px;
+	line-height: 30px;
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
 	padding-left: 8px;
 	padding-right: 8px;
 	margin-bottom: 5px;
-	color: #8F8F94;
-	font-size: 14px;
+	color: #F9F9F9;
+	font-size: 16px;
 	display: inline-block;
-	background-color: #F0F0F0;
+	background-color: #F0AD4E;
 	border-radius: 20px;
 }
 
@@ -463,26 +472,12 @@ body {
 .community_info_card p{
 	margin-bottom: 5px;
 }
-.community_composition .community_info_hidden{
+.community_composition{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
-.community_composition span{
-	height: 30px;
-	line-height: 30px;
-    width: 100px;
-    overflow: hidden;
-    text-align: center;
-	padding-left: 8px;
-	padding-right: 8px;
-	margin-bottom: 5px;
-	color: #F9F9F9;
-	font-size: 16px;
-	display: inline-block;
-	background-color: #F0AD4E;
-	border-radius: 20px;
-}
+
 .community_member p{
 	display: flex;
 	justify-content: center;
@@ -760,7 +755,33 @@ body {
 .community_post_action_new{
 	justify-content: center;
 }
-
+.community_link_div div + div{
+	margin-top: 15px;
+}
+.community_link{
+	display: flex;
+	justify-content: space-around;
+}
+.community_link button,
+.community_link input{
+	border: none;
+	border-bottom: solid 1px #999999;
+	border-radius: 0;
+	height: 25px;
+	font-size: 15px;
+	line-height: 20px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+.community_link button{
+	width: 80px;
+	text-align: center;
+}
+.community_link input{
+	width: calc(100% - 110px);
+	padding-left: 10px;
+}
 .mui-card .community_image_change{
 	margin: 0;
 	margin-bottom: -10px;
@@ -794,10 +815,8 @@ body {
 	margin: 0;
 	padding: 5px;
 }
-/*变更社团信息*/
+/*变更社团信息输入状态*/
 .community_info_textarea{
 	display: none;
 }
-/*.community_info_hidden{
-	display: none;
-}*/
+

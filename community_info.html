@@ -8,9 +8,14 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/mui.picker.css" />
+		<link rel="stylesheet" href="css/mui.poppicker.css" />
 		<title>Community-Info</title>
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="js/community_info.js" ></script>
 		<script>mui.init();</script>
 	</head>
 
@@ -239,7 +244,12 @@
 				</div>
 				<div class="mui-card-footer">
 					<div class="community_post_action">
-						<a title="返回">
+						<a title="删除">
+							<svg>
+								<use xlink:href="#ic_delete" />
+							</svg>
+						</a>
+						<a title="刷新">
 							<!--重置为初始值（数据库里的值）-->
 							<svg>
 								<use xlink:href="#ic_autorenew" />
@@ -248,11 +258,6 @@
 						<a title="发布">
 							<svg>
 								<use xlink:href="#ic_send" />
-							</svg>
-						</a>
-						<a title="删除">
-							<svg>
-								<use xlink:href="#ic_delete" />
 							</svg>
 						</a>
 					</div>
@@ -269,48 +274,50 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
 
-		<div class="community_post community_post_change">
+		<div class="community_post">
 			<div class="mui-card">
 				<div class="mui-card-header mui-card-media">
 					<div class="mui-media-body">
 						<p1 class="community_post_title post_title_change">
-							<textarea>请输入公告标题</textarea>
+							<textarea>社团链接</textarea>
 							<div class="people_phone_line"></div>
 						</p1>
 					</div>
 				</div>
 				<div class="mui-card-content">
-					<div class="mui-card-content-inner community_post_text">
-						<textarea>请输入正文</textarea>
+					<div class="mui-card-content-inner community_link_div">
+						<div class="community_link">
+							<button id='showLinkPicker' class="mui-btn mui-btn-block" type='button'>链接类型</button>
+							<input type="text" />
+						</div>
+						<div class="community_link">
+							<button id='showLinkPicker' class="mui-btn mui-btn-block" type='button'>链接类型</button>
+							<input type="text" />
+						</div>
+						<div class="community_link">
+							<button id='showLinkPicker' class="mui-btn mui-btn-block" type='button'>链接类型</button>
+							<input type="text" />
+						</div>
+						<div class="community_link">
+							<button id='showLinkPicker' class="mui-btn mui-btn-block" type='button'>链接类型</button>
+							<input type="text" />
+						</div>
 					</div>
 				</div>
 				<div class="mui-card-footer">
 					<div class="community_post_action">
-						<a title="返回">
-							<!--重置为初始值（数据库里的值）-->
+						<a href="" title="填写规则">
 							<svg>
-								<use xlink:href="#ic_autorenew" />
+								<use xlink:href="#ic_help" />
 							</svg>
 						</a>
-						<a title="发布">
+						<a>
 							<svg>
-								<use xlink:href="#ic_send" />
-							</svg>
-						</a>
-						<a title="删除">
-							<svg>
-								<use xlink:href="#ic_delete" />
-							</svg>
-						</a>
-					</div>
-				</div>
-				<div class="mui-card-footer">
-					<div class="community_post_action community_post_action_new">
-						<a title="新建公告">
-							<!--创建一个新公告-->
-							<svg>
-								<use xlink:href="#ic_add" />
+								<use xlink:href="#ic_done" />
 							</svg>
 						</a>
 					</div>
@@ -321,7 +328,7 @@
 		<div class="community_post">
 			<div class="community_info_show">
 				<div class="mui-card">
-					<div class="community_image community_image_change">
+					<div id="community-info-change-top" class="community_image community_image_change">
 						<a class="community_info_textarea">
 							<svg>
 								<use xlink:href="#ic_upload" />
@@ -348,13 +355,15 @@
 								<textarea rows="5" cols="20"></textarea>
 							</div>
 						</div>
-						<div class="mui-card-header community_composition">
+						<div class="mui-card-header">
 							<p class="community_info_title">部门组成</p>
-							<div class="community_info_hidden"><span>影视技术部</span>
+							<div class="community_info_hidden">
+								<div class="community_composition">
+								<span>影视技术部</span>
 								<span>影视主持部</span>
 								<span>音频技术部12345</span>
 								<span>广播部</span>
-								<span>宣策部</span></div>
+								<span>宣策部</span></div></div>
 							<div class="community_post_text community_info_textarea">
 								<p>每行一个部门</p>
 								<textarea rows="5" cols="20"></textarea>
@@ -382,7 +391,7 @@
 						<!--社团联系方式-->
 					</div>
 					<div class="mui-card-footer">
-						<a class="new_community_info">
+						<a class="new_community_info" href="#community-info-change-top">
 							<svg class="community_info_hidden">
 								<!--点击之后对main.css的/*变更社团信息*/的两个display效果互换-->
 								<use xlink:href="#ic_create" />
