@@ -9,6 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<title>Community-Info</title>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script>mui.init();</script>
 	</head>
 
 	<body>
@@ -389,8 +392,20 @@
 								<use xlink:href="#ic_done" />
 							</svg>
 						</a>
-
 					</div>
+					<script>
+					mui('.mui-card-footer').on('tap','.new_community_info',function(){
+						(function(a){
+							for(var i=0;i<a.length;i++)
+							{
+								if($(a[i]).css("display")=='none')
+									$(a[i]).css("display",'block');
+								else
+									$(a[i]).css("display",'none');
+							}
+						})($(this).find('svg'));
+					});
+					</script>
 				</div>
 			</div>
 		</div>
