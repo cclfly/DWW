@@ -777,7 +777,7 @@ p {
 	box-sizing: content-box;
 	width: 70%;
 	min-height: 100%;
-	background: #333;
+	background: #FAFAFA;
 	-webkit-overflow-scrolling: touch
 }
 
@@ -1375,7 +1375,7 @@ input[type=submit]:enabled:active {
 	color: #FFFFFF;/*菜单选中时颜色 */
 }
 .mui-bar-tab .mui-tab-item.mui-active svg{
-	fill: #FFFFFF;/*菜单选中时颜色 */
+	fill: #F0F0F0;/*菜单选中时颜色 */
 	transition: fill 1s;
 }
 .mui-bar-tab .mui-tab-item.mui-active .mui-icon{
