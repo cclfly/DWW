@@ -135,7 +135,7 @@
 	width: 100%;
 	height: 26px;
 	color: #F0F0F0;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 2px;
 	text-shadow: 2px 2px 2px #323232;
@@ -216,6 +216,7 @@ body {
 
 .community_image img {
 	width: 100%;
+	max-width: 500px;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
 }
 
@@ -250,35 +251,39 @@ body {
 	flex-wrap: wrap;
 }
 .community_link_show{
-	width: 45%;
-	min-width: 150px;
-	height: 60px;
-	margin: 1px;
-	display: inline-block;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .community_link_show a{
+	width: 150px;
+	height: 60px;
+	margin: 2px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: solid 1px #ACACB4;
+	border-top: solid 1px #D8D8D8;
+	box-shadow: 0px 1px 2px #999999;
 	border-radius: 5px;
 }
-.community_link_show img{
+.community_link_show a div{
 	width: 58px;
 	height: 58px;
 	display: inline-block;
+	overflow: hidden;
+	border: none;
+	background-size: 64px 64px;
+	background-position: center;
 }
-.community_link_show span{
+.community_link_show a span{
 	width: 80px;
 	height: 24px;
-	color: #727272;
 	font-size: 18px;
+	line-height: 24px;
 	font-weight: 400;
 	text-align: center;
-	border-bottom: solid 1px #ACACB4;
 	display: inline-block;
 }
-
 /*社团公告*/
 
 .community_post {
@@ -387,6 +392,7 @@ body {
 	padding: 10px 16px 10px 16px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
 	border: solid #cccccc 1px;
+	border-radius: 2px;
 	background-color: #fff;
 }
 
@@ -463,7 +469,7 @@ body {
 	top: -5px;
 }
 
-.peole_number {
+.people_phone .people_phone_number .peole_number {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -710,6 +716,42 @@ body {
 
 
 /*Regist.html*/
+.choose_school_card{
+	height: 130px;
+	padding: 0;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+.choose_school_card div{
+	width: 100%;
+	height: 30px;
+}
+.choose_school_card div+div{
+	margin-top: 12px;
+}
+#choose_city,#choose_school{
+	height: 24px;
+	width: calc(100% - 120px);
+	min-width: 160px;
+	max-width: 360px;
+	padding: 0;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 0;
+	border: none;
+	border-bottom: solid 1px #ACACB4;
+}
+.choose_school_title{
+	padding: 4px;
+	border-bottom: solid 1px #ACACB4;
+}
 
 .regist_card .people_card {
 	align-items: center;
@@ -735,6 +777,7 @@ body {
 
 .regist_card .people_phone .people_phone_number div,
 .regist_card .people_phone .people_phone_new div {
+	width: calc(100% - 100px);
 	min-width: 176px;
 }
 
@@ -920,4 +963,88 @@ body {
 .community_info_textarea{
 	display: none;
 }
-
+/*log_in.html*/
+.log_card{
+	height: 100vh;
+	min-height: 360px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.app_name{
+	height: 40vh;
+	min-height: 130px;
+	max-height: 230px;
+	width: 100%;
+	min-width: 220px;
+	max-width: 550px;
+	padding: 20px;
+	margin-top: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.app_title{
+	width: 100%;
+	height: 100%;
+	min-height: 100px;
+	max-height: 200px;
+	margin: auto;
+	margin-bottom: 5px;
+	background-image: url(../image/sttxl.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.log_type{
+	height: 170px;
+	width: 100%;
+	padding: 0;
+	padding-bottom: 10px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.log_type button{
+	height: 34px;
+	width: 162px;
+	padding: 0;
+	border: solid 1px #AAAAAA;
+	display: flex;
+	align-items: center;
+	border-radius: 34px;
+}
+.log_type img{
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+}
+.log_type span{
+	height: 32px;
+	width: 130px;
+	color: #F7F7F7;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 32px;
+	display: inline-block;
+}
+.log_weibo{
+	background-color: #E6162D;
+}
+.log_qq{
+	background-color: #2a9cd5;
+}
+.log_wechat{
+	background-color: #51c332;
+}
+.log_type a{
+	height: 20px;
+	color: #707070;
+	margin-top: 10px;
+}
