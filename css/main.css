@@ -1048,3 +1048,63 @@ body {
 	color: #707070;
 	margin-top: 10px;
 }
+/*setting.html*/
+.setting_card{
+	width: 100%;
+	height: 100%;
+}
+.setting_list{
+	width: 100%;
+	margin-bottom: 15px;
+}
+.setting_list>div{
+	width: 100%;
+}
+.setting_tag{
+	height: 30px;
+	padding: 5px;
+	color: #727272;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+}
+.setting_list>div+div{
+	height: 46px;
+	padding: 5px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: solid 1px #C0C0C0;
+}
+.setting_text span{
+	font-size: 20px;
+	line-height: 20px;
+	display: block;
+}
+.setting_text span+span{
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.setting_icon{
+	width: 30px;
+	height: 30px;
+}
+.setting_icon svg{
+	width: 30px;
+	height: 30px;
+	fill: #727272;
+	transform: scale(1,-1);
+}
+.binding svg{
+	fill: #51C332;
+}
+.user_UI{
+	width: 26px;
+	height: 26px;
+	margin: 2px;
+	border-radius: 6px;
+	background-color: #F29600;
+}
+.delete_account svg{
+	fill: #E6162D;
+}
