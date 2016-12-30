@@ -1,4 +1,20 @@
-<div style="display: none;">
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui-use.css" />
+		<link rel="stylesheet" type="text/css" href="css/sb.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<title>我的社团-mine-community</title>
+	</head>
+
+	<body>
+		<div style="display: none;">
 	<svg xml version="1.0" encoding="utf-8" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 		<style type="text/css">
 			.st0 {
@@ -324,8 +340,86 @@
 				C45,35.5,40.5,40,35,40z M0,25c8.3,0,15-6.7,15-15S8.3-5,0-5s-15,6.7-15,15S-8.3,25,0,25z M30-35h-60v5c0,10,20,15.5,30,15.5
 				S30-20,30-30V-35z"/>
 		</symbol>
-		<symbol  id="ic_school" viewBox="-50 -37.5 100 75">
-			<path d="M-31.9-4.9v-16.7L0-37.5l31.9,15.9v16.7L0-20.8L-31.9-4.9z M0,37.5l-50-25l50-25L40.9,8v-28.8H50v33.3L0,37.5z"/>
-		</symbol>
 	</svg>
 </div>
+
+		<div class="body mine-community">
+		<div class="sb-card community-apply">
+			<div class="sb-card-head normal-title">社团管理</div>
+			<div class="sb-card-foot small-title">
+				<div class="sb-card-list">
+					<svg>
+						<use xlink:href="#ic_balance"></use>/>
+					</svg>
+					<select name="new_community"><!--picker选择器-->
+						<option value="" selected="selected" disabled="disabled">--请选择社团--</option>
+						<option value="C1">111111111社团1</option>
+						<option value="C2">2社团2</option>
+						<option value="C3">3社团3</option>
+						<option value="C4">4社团4</option>
+					</select>		
+				</div>
+			</div>
+			<div class="sb-card-body normal-text">
+				<div class="sb-card-list">
+					<svg style="margin-left: .625rem;"><!--修正图标长宽比-->
+						<use xlink:href="#ic_verifi"></use>/>
+					</svg>
+					<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="社团验证暗号"/>
+							<span class="focus-line"></span>
+					</span>
+				</div>
+			</div>
+			<div class="sb-card-foot small-title foot-one-svg">
+				<svg>
+					<use xlink:href="#ic_done"></use>/>
+				</svg>
+			</div>
+		</div>
+		
+		<div class="sb-card community-joined">
+				<div class="sb-card-head normal-title">已加入社团</div>
+				<div class="sb-card-body normal-text">
+					<div class="sb-card-list community-current"><!--当前选中社团添加类.community-current-->
+						<img class="img-svg" src="image/jdzs_icon.png" />
+						<span>金盾之声广播影视中心</span>
+						<svg>
+							<use xlink:href="#ic_delete"></use>/>
+						</svg>
+					</div>
+					<div class="sb-card-list">
+						<img class="img-svg" src="image/jdzs_icon.png" />
+						<span>{--社团名字2--}</span>
+						<svg>
+							<use xlink:href="#ic_delete"></use>/>
+						</svg>
+					</div>
+					<div class="sb-card-list">
+						<img class="img-svg" src="image/jdzs_icon.png" />
+						<span>{--社团名字3--}</span>
+						<svg>
+							<use xlink:href="#ic_delete"></use>/>
+						</svg>
+					</div>
+					<div class="sb-card-list">
+						<img class="img-svg" src="image/jdzs_icon.png" />
+						<span>{--社团名字4--}</span>
+						<svg>
+							<use xlink:href="#ic_delete"></use>/>
+						</svg>
+					</div>
+					<div class="sb-card-list">
+						<img class="img-svg" src="image/jdzs_icon.png" />
+						<span>{--社团名字5--}</span>
+						<svg>
+							<use xlink:href="#ic_delete"></use>/>
+						</svg>
+					</div>
+				</div>
+			</div>
+
+	</div>
+	</body>
+
+</html>

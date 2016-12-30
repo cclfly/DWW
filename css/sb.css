@@ -35,7 +35,7 @@ html {
 	--深主色: #E64A19;
 	--主色: #FF5722;
 	--浅主色: #FFCCBC;
-	--图标色: #212121;
+	--图标色: #727272;
 	--强调色: #00BCD4;
 	--按钮内容: rgba(255,255,255,1);
 	--纯色文字: rgba(0,0,0,1);
@@ -156,6 +156,12 @@ div{
 	font-weight: 400!important;
 	line-height: 1.625rem!important;/*26px*/
 }
+.small-text{
+	color: var(--普通文字)!important;
+	font-size: 1rem!important;/*16px*/
+	font-weight: 400!important;
+	line-height: 1.625rem!important;/*26px*/
+}
 .point-text{
 	color: var(--提示文字)!important;
 	font-size: 0.875rem!important;/*14px*/
@@ -219,8 +225,19 @@ div{
     flex-shrink: 0;
 }
 /*sb-card 内部组件*/
+/*select&option*/
+.sb-card-foot select{
+	width: 10.5rem;
+	min-height: 30px;
+	font-size: inherit;
+}
+.sb-card-foot option{
+	font-size: inherit;
+	text-align: center;
+}
 /*input text 点击效果*/
 .sb-card .input-text{
+	width: 10.5rem;
 	height: calc(1.625rem + 2px);
 	margin: 0.125rem 0.625rem 0 0.625rem;
 	border-bottom: solid 1px var(--分隔线);
@@ -251,6 +268,34 @@ div{
 	width: 100%;
 	transition: width .2s ease-in-out; 
 }
+/*个人信息sb-card-body嵌套*/
+.small-text>div{
+	align-items: flex-start;
+}
+.small-text .small-text{
+	width: 10.5rem;
+	justify-content: center;
+}
+.small-text .small-text>div>span{
+	width: 4rem;
+}
+.small-text .small-text select{
+	width: 10rem;
+    min-height: 30px;
+    font-size: inherit;
+}
+.small-text .small-text span+span{
+	width: 10rem;
+    margin: 0;
+}
+.small-text .small-text input{
+	font-size: inherit!important;
+	line-height: inherit!important;
+}
+/*个人信息手机号宽度*/
+.phone-number{
+	width: 10.5rem;
+}
 /*纸张（显示通知，方角）*/
 .sb-paper{
 	width: calc(100% - 10px);
@@ -274,6 +319,7 @@ div{
 	height: 2.675rem;
 	min-height: 40px;
 	padding: 5px 10px;
+	width: 50%;
 }
 /*圆形容器*/
 .circle{
@@ -287,6 +333,13 @@ svg{
 	height: 2rem;
 	padding: .125rem;
 	margin: .25rem;
+}
+.img-svg{
+	width: 2rem;
+	height: 2rem;
+	padding: .125rem;
+	margin: .25rem;
+	border-radius: 100%;
 }
 .small-svg svg{
 	width: 1.5rem;

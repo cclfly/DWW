@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/sb.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<script type="text/javascript" src="js/mui.min.js"></script>
-		<title>社团成员管理</title>
+		<title>社团成员管理-community-people</title>
 	</head>
 
 	<body>
@@ -543,25 +543,18 @@
 			<div class="sb-card people-jolin">
 				<div class="sb-card-foot small-title">
 					<span>允许申请加入社团</span>
-					<div class="mui-switch  mui-active">
+					<div class="mui-switch  mui-active"><!--关闭时禁用(disabled="disabled"))下面的input#join-pwd-->
 						<div class="mui-switch-handle"></div>
 					</div>
 				</div>
 				<div class="sb-card-body normal-text">
 					<div class="sb-card-list point-text">
-						将答案告知成员，常更换保证安全
+						将暗号告知成员，常更换保证安全
 					</div>
 					<div class="sb-card-list">
-						<span>设置问题:</span>
+						<span>设置暗号:</span>
 						<span class="input-text">
-							<input class="normal-text" type="text" id="join-question" size="14" placeholder="加入社团问题"/><!--10个中文字符以内，限中文-->
-							<span class="focus-line"></span>
-						</span>
-					</div>
-					<div class="sb-card-list">
-						<span>设置答案:</span>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="join-answer" size="14" placeholder="问题的答案" /><!--5个中文字符以内，限中文-->
+							<input class="normal-text" type="text" id="join-pwd" size="14" placeholder="加入社团的暗号"/><!--10个中文字符以内，限中文-->
 							<span class="focus-line"></span>
 						</span>
 					</div>
