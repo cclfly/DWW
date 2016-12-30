@@ -1,0 +1,36 @@
+/*community_people*/
+.community-people-check .sb-paper-motion button{
+	width: 50%;
+}
+.community-people-manage .small-button-text{
+	justify-content: space-around;
+}
+.community-people-manage .sb-card-foot select{
+	width: 35%;
+	min-width: 56px;
+	min-height: 30px;
+	font-size: inherit;
+}
+.community-people-manage .sb-card-foot option{
+	font-size: inherit;
+}
+.community-people-manage .sb-card-body{
+	height: calc(5.75rem + 330px);
+	overflow: auto;
+}
+.people-jolin .sb-card-body>div{
+	flex-wrap: wrap;
+}
+.people-jolin .sb-card-list{
+	margin: .5rem 0;
+}
+.people-jolin .sb-card-list input{
+	padding: 0 .5rem;
+}
+
+.sb-card .admin-manage-result{
+	display: //none;
+}
+.sb-card .admin-manage-result-show{
+	display: block;
+}
