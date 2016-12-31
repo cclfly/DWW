@@ -1,0 +1,8 @@
+jQuery flexText: auto-height textareas
+textarea高度自适应
+https://github.com/alexdunphy/flexText
+
+waves.js
+
+
+

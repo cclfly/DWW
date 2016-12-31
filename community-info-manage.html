@@ -6,11 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
-		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" type="text/css" href="css/icon.css"/>
-		<title>社团主页</title>
+		<link rel="stylesheet" type="text/css" href="css/mui-use.css" />
+		<link rel="stylesheet" type="text/css" href="css/sb.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="js/mui.min.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flexText.min.js"></script>
+		<title>社团信息管理-community-info-manage</title>
 	</head>
 
 	<body>
@@ -312,119 +314,264 @@
 		 M-14.2-15.2c-2.6,1.1-5.9,0-7.5-2.5c-1.6-2.5-0.8-5.5,1.7-6.7c2.6-1.2,6-0.1,7.6,2.5C-10.8-19.3-11.6-16.3-14.2-15.2z M-7.9-12.6
 		c-1,0.4-2.2-0.1-2.8-1.1c-0.6-1-0.3-2.1,0.7-2.5c1-0.4,2.3,0.1,2.9,1.1C-6.5-14.1-6.9-12.9-7.9-12.6z" />
 				</symbol>
+				<symbol id="ic_setting" viewBox="-48.6 -50 97.3 100">
+					<path d="M37.2-4.9c0.2,1.6,0.3,3.2,0.3,4.9s-0.2,3.3-0.3,4.9l10.6,8.2c1,0.7,1.2,2.1,0.6,3.2l-10,17.3c-0.6,1.1-1.9,1.5-3.1,1.1
+				l-12.4-5c-2.6,2-5.4,3.6-8.5,4.9l-1.9,13.3C12.3,49.1,11.3,50,10,50h-20c-1.3,0-2.3-0.9-2.4-2.1l-1.9-13.3c-3-1.3-5.9-3-8.4-4.9
+				l-12.5,5c-1.2,0.5-2.5,0-3.1-1.1l-10-17.3c-0.7-1.1-0.3-2.4,0.6-3.2l10.6-8.2c-0.2-1.6-0.4-3.2-0.4-4.9s0.2-3.3,0.4-4.9l-10.5-8.2
+				c-1-0.7-1.2-2.1-0.6-3.2l10-17.3c0.6-1.1,2-1.5,3-1.1l12.5,5c2.6-2,5.4-3.6,8.5-4.9l1.9-13.2c0.1-1.2,1.2-2.1,2.4-2.1h20
+				c1.3,0,2.3,0.9,2.4,2.1l1.9,13.2c3,1.3,5.9,3,8.5,4.9l12.4-5c1.1-0.5,2.5,0,3.1,1.1l10,17.3c0.6,1.1,0.3,2.4-0.6,3.2L37.2-4.9z
+				 M0-17.5c-9.7,0-17.5,7.8-17.5,17.5S-9.6,17.5,0,17.5S17.5,9.6,17.5,0S9.7-17.5,0-17.5z" />
+				</symbol>
+				<symbol id="ic_people_group" viewBox="-50 -40 100 80">
+					<path d="M40,30H0l-10,10h-30c-5.5,0-10-4.5-10-10l0-60c0-5.5,4.5-10,10-10h80c5.5,0,10,4.5,10,10v50C50,25.5,45.5,30,40,30z M15,15
+				c5.5,0,10-4.5,10-10S20.5-5,15-5S5-0.5,5,5S9.5,15,15,15z M35-25H-5v5c0,6.6,13.4,10,20,10s20-3.4,20-10V-25z" />
+				</symbol>
+				<symbol id="ic_link" viewBox="-50 -25 100 50">
+					<path d="M-40.5,0c0,8.6,7,15.5,15.5,15.5h20V25h-20c-13.8,0-25-11.2-25-25s11.2-25,25-25h20v9.5h-20C-33.5-15.5-40.5-8.6-40.5,0z
+				 M-20-5h40V5h-40V-5z M25,25H5v-9.5h20c8.5,0,15.5-7,15.5-15.5S33.6-15.5,25-15.5H5V-25h20c13.8,0,25,11.2,25,25S38.8,25,25,25z" />
+				</symbol>
+				<symbol id="ic_change_people" viewBox="-50 -40 100 80">
+					<path d="M40,30H0l-10,10h-30c-5.5,0-10-4.5-10-10v-60c0-5.5,4.5-10,10-10h80c5.5,0,10,4.5,10,10v50C50,25.5,45.5,30,40,30z M15,15
+				c5.5,0,10-4.5,10-10S20.5-5,15-5S5-0.5,5,5S9.5,15,15,15z M-35.3-8.6l-3.2-3.2c-1.7,2.7-2.7,5.9-2.7,9.3c0,9.7,7.8,17.5,17.5,17.5
+				v6.6l8.7-8.8l-8.7-8.7v6.6c-7.3,0-13.1-5.9-13.1-13.1C-36.8-4.7-36.3-6.8-35.3-8.6z M-23.7-20v-6.6l-8.7,8.8l8.7,8.7v-6.6
+				c7.3,0,13.1,5.9,13.1,13.1c0,2.2-0.5,4.3-1.5,6.1l3.2,3.2C-7.2,4.1-6.2,1-6.2-2.5C-6.2-12.2-14-20-23.7-20z M35-25H-5v5
+				c0,6.6,13.4,10,20,10c6.6,0,20-3.4,20-10V-25z" />
+				</symbol>
+				<symbol id="ic_admin" viewBox="-45 -50 90 100">
+					<path d="M35,40h-5v10H20V40h-40v10h-10V40h-5c-5.5,0-10-4.5-10-10v-70c0-5.5,4.5-10,10-10h70c5.5,0,10,4.5,10,10v70
+				C45,35.5,40.5,40,35,40z M0,25c8.3,0,15-6.7,15-15S8.3-5,0-5s-15,6.7-15,15S-8.3,25,0,25z M30-35h-60v5c0,10,20,15.5,30,15.5
+				S30-20,30-30V-35z" />
+				</symbol>
 			</svg>
+
 		</div>
 
-		<div class="community_image">
-			<img class="image" src="image/jdzs.png" />
-			<!--这里的图片与社团相对应-->
-		</div>
-		<div class="community_info">
-			<div class="community_department">
-				<div class="department_title_info">
-					<span class="title_afterminor">{社团名字}共有{人数}个成员</span>
+		<div class="body community-info-manage">
+			<div class="sb-card post-input">
+				<div class="sb-card-head normal-title">
+					<span class="input-text">
+						<input type="text" class="normal-text" id="" size="14" placeholder="请输入公告标题"/>
+						<span class="focus-line"></span>
+					</span>
 				</div>
-
-				<div class="community_post">
-					<div class="mui-card">
-						<div class="mui-card-header mui-card-media">
-							<div class="community_link_title">
-								<span>社团链接</span>
-							</div>
-						</div>
-						<div class="mui-card-content">
-							<div class="mui-card-content-inner community_link_show">
-									<a class="icon_qzone" target="_blank" href="http://qzone.qq.com"><!--href值来自填写的，类型相对应的class-->
-										<div></div>
-										<span></span>
-									</a>
-									<a class="icon_qq" target="_blank" href="http://qun.qq.com"><!--href值来自填写的，类型相对应的class-->
-										<div></div>
-										<span></span>
-									</a>
-									<a class="icon_weibo" target="_blank" href="http://we"><!--href值来自填写的，类型相对应的class-->
-										<div></div>
-										<span></span>
-									</a>
-									<a class="icon_wechat" target="_blank" href="http://weixin.qq.com"><!--href值来自填写的，类型相对应的class-->
-										<div></div>
-										<span></span>
-									</a>
-							</div>
-						</div>
-
+				<div class="sb-card-body normal-text">
+					<div class="sb-card-list">
+						<span class="input-text">
+							<textarea class="post-input-textarea" wrap="hard" placeholder="请输入公告内容"></textarea>
+						</span>
 					</div>
+				</div>
+				<div class="sb-card-foot small-title">
+					<!--重置为初始值（获取数据库的值）-->
+					<svg title="刷新">
+						<use xlink:href="#ic_autorenew" />
+					</svg>
+					<svg title="删除">
+						<use xlink:href="#ic_delete"></use>/>
+					</svg>
+					<svg title="发布">>>
+						<use xlink:href="#ic_send"></use>/>
+					</svg>
+				</div>
+				<div class="sb-card-foot small-title foot-one-svg">
+					<svg>
+						<use xlink:href="#ic_done"></use>/>
+					</svg>
+				</div>
+			</div>
+
+			<div class="sb-card link-input">
+				<div class="sb-card-head normal-title">
+					社团链接
+				</div>
+				<div class="sb-card-body normal-text">
+					<div class="sb-card-list">
+						<select name="年级" id="">
+							<option>链接类型</option>
+							<option>{2012}</option>
+							<option>{2013}</option>
+							<option>{2014}</option>
+						</select>
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<span class="focus-line"></span>
+						</span>
+					</div>
+					<div class="sb-card-list">
+						<select name="年级" id="">
+							<option>链接类型</option>
+							<option>{2012}</option>
+							<option>{2013}</option>
+							<option>{2014}</option>
+						</select>
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<span class="focus-line"></span>
+						</span>
+					</div>
+					<div class="sb-card-list">
+						<select name="年级" id="">
+							<option>链接类型</option>
+							<option>{2012}</option>
+							<option>{2013}</option>
+							<option>{2014}</option>
+						</select>
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<span class="focus-line"></span>
+						</span>
+					</div>
+					<div class="sb-card-list">
+						<select name="年级" id="">
+							<option>链接类型</option>
+							<option>{2012}</option>
+							<option>{2013}</option>
+							<option>{2014}</option>
+						</select>
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<span class="focus-line"></span>
+						</span>
+					</div>
+					<div class="sb-card-list">
+						<select name="年级" id="">
+							<option>链接类型</option>
+							<option>{2012}</option>
+							<option>{2013}</option>
+							<option>{2014}</option>
+						</select>
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<span class="focus-line"></span>
+						</span>
+					</div>
+					<div class="sb-card-list">
+						<select name="年级" id="">
+							<option>链接类型</option>
+							<option>{2012}</option>
+							<option>{2013}</option>
+							<option>{2014}</option>
+						</select>
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<span class="focus-line"></span>
+						</span>
+					</div>
+				</div>
+				<div class="sb-card-foot small-title">
+					<svg>
+						<use xlink:href="#ic_help"></use>/>
+					</svg>
+					<svg>
+						<use xlink:href="#ic_done"></use>/>
+					</svg>
+				</div>
+			</div>
+
+			<div class="sb-card info-input">
+				<span id="info-input-img" class="community-img">
+					<svg class="info-input-hidden">
+						<use xlink:href="#ic_upload"></use>/>
+					</svg>
+					<img class="info-input-active" src="image/jdzs.png" />
+					<img class="info-input-hidden"  src="image/jdzs.png" />
+					<!--这里的两张图片与社团相对应-->
+				</span>
+				<div class="sb-card-head normal-title">
+					金盾之声广播影视中心
+					<span class="point-text">社团共有{value}个成员</span>
+				</div>
+				<div class="sb-card-body normal-text">
+					社团简介
+					<div class="sb-card-list">
+						<p class="small-title info-input-active">
+							负责安排学院活动拍摄，制作校园电视节目，学院广播节目录制，LED屏幕的播放管理，协助宣传处承办校内校外的活动，和完成宣传处的其他工作 。
+						</p>
+						<span class="input-text info-input-hidden">
+							<textarea class="post-input-textarea" wrap="hard" placeholder="请输入社团简介"></textarea>
+						</span>
+					</div>
+				</div>
+				<div class="sb-card-body normal-text">
+					部门组成
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">影视技术部：</span>
+						<span class="text-align-left">100人</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">影视部：</span>
+						<span class="text-align-left">20人</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">{部门}：</span>
+						<span class="text-align-left">{人数}人</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">{部门}：</span>
+						<span class="text-align-left">{人数}人</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">{部门}：</span>
+						<span class="text-align-left">{人数}人</span>
+					</div>
+					<span class="input-text info-input-hidden">
+						<textarea class="post-input-textarea" wrap="hard" placeholder="一行一个部门，不支持字母及符合"></textarea>
+					</span>
+				</div>
+				<div class="sb-card-body normal-text">
+					主要成员
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">社长：</span>
+						<span class="text-align-left">XXX</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">副社长：</span>
+						<span class="text-align-left">XX</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">XX部部长：</span>
+						<span class="text-align-left">XXX</span>
+					</div>
+					<div class=" sb-card-list small-title info-input-active">
+						<span class="text-align-right">{部门}：</span>
+						<span class="text-align-left">{名字}</span>
+					</div>
+					<span class="input-text info-input-hidden">
+						<textarea class="post-input-textarea" wrap="hard" placeholder="一行一个，职务与姓名用@隔开，如“社长@王小明”"></textarea>
+					</span>
+				</div>
+				<div class="sb-card-foot small-title foot-one-svg">
+					<a id="info-input-button" class="info-input-active" href="#info-input-img">
+						<svg class="">
+							<use xlink:href="#ic_create"></use>/>
+						</svg>
+					</a>
+					<a id="info-input-button" class="info-input-hidden" href="#info-input-img">
+						<svg class="">
+							<!--这个svg是提交，提交后刷新数据-->
+							<use xlink:href="#ic_done"></use>/>
+						</svg>
+					</a>
 				</div>
 
 			</div>
-			<div class="community_post">
-				<div class="mui-card">
-					<div class="mui-card-header mui-card-media">
-						<div class="mui-media-body">
-							<p1 class="community_post_title">{公告1标题}</p1>
-							<p1 class="community_post_info">{time} 发布者：{person} 来自：{department}</p1>
-						</div>
-					</div>
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner community_post_text">
-							{公告1内容}
-						</div>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-header mui-card-media">
-						<div class="mui-media-body">
-							<p1 class="community_post_title">首行缩进</p1>
-							<p1 class="community_post_info">2016.12.9 发布者：cxy 来自：home</p1>
-						</div>
-					</div>
-					<div class="mui-card-content">
-						<div class="mui-card-content-inner community_post_text">
-							段落前面空两个字的距离，不要再使用空格了。应该使用首行缩进text-indent。text-indent可以使得容器内首行缩进一定单位。比如中文段落一般每段前空两个汉字。
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="community_post">
-			<div class="mui-card community_info_show">
-				<div class="community_info_card">
-					<div class="mui-card-header community_introduce">
-						<p class="community_info_title">社团简介</p>
-						<p class="community_post_text">负责安排学院活动拍摄，制作校园电视节目，学院广播节目录制，LED屏幕的播放管理，协助宣传处承办校内校外的活动，和完成宣传处的其他工作 。</p>
-					</div>
-					<div class="mui-card-header">
-						<p class="community_info_title">部门组成</p>
-						<div class="community_composition">
-							<span>影视技术部</span>
-							<span>影视主持部</span>
-							<span>音频技术部</span>
-							<span>广播部</span>
-							<span>宣策部</span></div>
-					</div>
-					<div class="mui-card-header community_member">
-						<p class="community_info_title">主要成员</p>
-						<p><span class="community_member_duties">社长：</span>
-							<span class="community_member_name">XXX</span></p>
-						<p><span class="community_member_duties">副社长：</span>
-							<span class="community_member_name">XX</span></p>
-						<p><span class="community_member_duties">XX部部长：</span>
-							<span class="community_member_name">XXXXX</span></p>
-						<p><span class="community_member_duties">XXX部部长：</span>
-							<span class="community_member_name">XXXX</span></p>
-						<p><span class="community_member_duties">影视技术部副部长：</span>
-							<span class="community_member_name">XXXXX</span></p>
-					</div>
-				</div>
-			</div>
+
 		</div>
 
+		<script type="application/javascript">
+			mui('.sb-card-foot').on('tap', '#info-input-button', function() {
+				if($('.info-input-hidden').css('display') == 'none') {
+					$('.info-input-hidden').css('display', 'block');
+					$('.info-input-active').css('display', 'none');
+				} else {
+					$('.info-input-hidden').css('display', 'none');
+					$('.info-input-active').css('display', 'block');
+				}
+			});
+			$(function() {
+				$('.post-input-textarea').flexText();
+			});
+		</script>
 	</body>
-	<script src="js/mui.min.js"></script>
-	<script>
-		mui.init({
-			swipeBack: true //启用右滑关闭功能
-		});
-	</script>
 
 </html>

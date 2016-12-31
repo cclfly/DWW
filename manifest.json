@@ -10,7 +10,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "tab-webview-main.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "community-info.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -255,6 +255,19 @@
 			"tab-webview-subpage-setting.html": {
 				"resources": [
 					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"community-info.html": {
+				"resources": [
+					"css/index.css",
+					"css/sb.css",
+					"js/jquery.flexText.min.js",
+					"js/mui.min.js",
+					"css/mui-use.css",
+					"js/jquery-2.1.4.min.js",
+					"image/jdzs.png"
 				],
 				"refer": [],
 				"priority": 0

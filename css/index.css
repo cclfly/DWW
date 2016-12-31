@@ -40,11 +40,146 @@
 	color: var(--主色)!important;
 	order: -1;
 }
-/*regist.html*/
+/*community-info-manage.html*/
+.info-input,.community-info{
+	padding-top: 0;
+}
+.info-input .community-img,
+.community-info .community-img{
+	width: calc(100% + 40px);
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+    position: relative;
+}
+.community-img svg{
+	position: absolute;
+    margin: auto;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: auto;
+    z-index: 5;
+}
+.community-img img{
+	width: 100%;
+	z-index: 1;
+}
+.community-img img+img{
+	opacity: .4;
+	position: relative;
+}
+.community-info-manage .sb-card-body .input-text {
+    width: 100%;
+    height: auto;
+    max-height: 20rem;
+    border: solid 1px var(--分隔线);
+}
+.post-input .sb-card-body .input-text:focus{
+	border: solid 2px var(--强调色);//cxy:内部元素获得focus,无法实现,等待加载ccfly
+}
+.link-input .sb-card-body select{
+	width: 6.5rem;
+	max-height: 30px;
+	font-size: inherit;
+}
+.info-input .small-title span{
+	overflow: hidden;
+}
+/**对齐冒号**/
+.community>.community-info>.sb-card-body>.sb-card-list,
+.community-info-manage>.info-input>.sb-card-body>.sb-card-list
+{
+	display: flex;
+}
+.community-info .small-title .text-align-right,
+.info-input .small-title .text-align-right{
+	width: 14.5rem;
+}
+.community-info .small-title .text-align-left,
+.info-input .small-title .text-align-left{
+	width: 11.5rem;
+}
+/*输入状态切换*/
+.community-info-manage>.info-input .info-input-hidden{
+	display: none;
+}
+.community-info-manage>.info-input .info-input-active{
+	display: block;
+}
+/*community.html*/
+.community-link .sb-card-body{
+	width: calc(100% + 1.25rem);
+	margin: 0;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.community-link .sb-card-body>a{
+	width: 9.375rem;
+    height: 3.75rem;
+    margin: .125rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: solid 1px #D8D8D8;
+    box-shadow: 0px 1px 2px #999999;
+    border-radius: 1rem;
+}
+.community-link .sb-card-body>a>div{
+	width: 3.625rem;
+    height: 3.625rem;
+    display: inline-block;
+    overflow: hidden;
+    border: none;
+    background-size: 4rem 4rem;
+    background-position: center;
+}
+.community-link .sb-card-body>a>span{
+	width: 5.5rem;
+}
+/*contacts.html*/
+.contacts-filter{
+	position: fixed;
+	z-index: 10;
+}
+.contacts-filter+.contacts-info{
+	margin-top: calc(2.675rem + 20px);
+}
+.contacts .contacts-info>div:first-of-type{
+	padding: .25rem 0;
+}
+.contacts .contacts-info>div>span:first-of-type{
+	width: 2rem;
+	height: 2rem;
+	margin: .25rem;
+	border-radius: 100%;
+	background-color: var(--主色);
+}
+.contacts .contacts-info>div>span img{
+	width: 100%;
+	height: 100%;
+}
+.contacts .contacts-info>div>span+span{
+	width: calc(100% - 5rem);
+}
 
+.contacts-info>.contacts-name .contacts-motion-icon{
+	transform: rotate(0deg);
+	transition: transform .3s;
+}
+.contacts-info>.contacts-name-show .contacts-motion-icon{
+	transform: rotate(180deg);
+	transition: transform .3s;
+}
 
-
-
+.contacts-info>.contacts-detail {
+	opacity: 1;
+	transition: all 2s ease-in-out;
+}
+.contacts-info>.contacts-detail-hidden {
+	display: none;
+	opacity: 0;
+	transition: all 2s ease-in-out;
+}
 
 
 
@@ -199,4 +334,130 @@
 	height: 20px;
 	color: #707070;
 	margin-top: 10px;
+}
+/*菜单*/
+/*顶栏及菜单*/
+.menu_icon{
+	width: 25px;
+	height: 25px;
+	fill: #F0F0F0;
+}
+.mui-bar .mui-title{
+	padding-left: 15px;
+	font-size: 14pt;
+	font-weight: 600;
+	text-align: left;
+}
+.menu_head{
+	width: 100%;
+	height: 140px;
+	background-image: url(../image/menu.png);
+	background-repeat:no-repeat;
+	background-size: auto 160px;
+    background-position:50% 50%;
+	background-color: #F29600;
+}
+.menu_person{
+	width: 100%;
+	height: 114px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.menu_person_icon{
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	background-color: #F1765A;
+}
+.menu_person_name{
+	width: 110px;
+	max-height: 50px;
+	color: #F0F0F0;
+	font-size: 22px;
+	font-weight: 500;
+	text-align: center;
+	text-shadow: 2px 2px 2px #323232;
+	overflow: hidden;
+}
+.menu_person_setting{
+	width: 27px;
+	height: 27px;
+	border-radius: 25px;
+	background-color: rgba(5,5,5,.5);
+	padding: 3px;
+}
+.menu_person_setting svg{
+	width: 21px;
+	height: 21px;
+	fill: #F0F0F0;
+}
+.menu_school{
+	width: 100%;
+	height: 26px;
+	color: #F0F0F0;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 2px #323232;
+	padding: 3px 5px 3px 10px;
+	background-color: rgba(50,50,50,0.35);
+}
+.menu_body{
+	width: 100%;
+	height: calc(100vh - 185px);
+	min-height: 320px;
+}
+.menu_list{
+	width: 100%;
+	height: 45px;
+	padding: 10px;
+	padding-top: 7px;
+	display: flex;
+	align-items: center;
+}
+.menu_list_tag{
+	height: 20px;
+	width: 100%;
+	color: #929292;
+	font-size: 15px;
+	font-weight: 500;
+	padding-top: 5px;
+	padding-left: 10px;
+	margin-bottom: 5px;
+}
+.menu_border{
+	box-shadow: 1px 0 2px #727272;
+}
+.menu_icon_img{
+	width: 25px;
+	height: 25px;
+	border-radius: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+	background-color: #F0AD4E;
+}
+.menu_icon_svg{
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	fill: #505050;
+	transform: scale(1,-1);
+}
+.menu_list_text{
+	width: calc(100% - 55px);
+	height: 25px;
+	color: #323232;
+	font-size: 16px;
+	line-height: 25px;
+	font-weight: 500;
+	overflow: hidden;
+	display: inline-block;
+}
+.menu_new_community svg{
+	fill: #929292;
+}
+.menu_list_exit{
+	text-align: end;
 }

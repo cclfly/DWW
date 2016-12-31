@@ -4,6 +4,11 @@ html {
     /* iPhone6的375px尺寸作为16px基准，600px正好18px大小 */
     --root-rem: calc(100% + 2 * (100vw - 375px) / 225);
 }
+@media screen and (max-width: 299px) {
+	html{
+		--root-rem: 14px;
+	}
+}
 @media screen and (min-width: 400px) and (max-width: 599px) {
     html {
         /* 400px-600px每100像素宽字体增加1px(18px-22px) */
@@ -56,6 +61,7 @@ html {
 	right: var(--root-rem);
 	bottom: var(--root-rem);
 	left: var(--root-rem);
+	background-size: var(--root-rem);
 }
 .done{
 	fill: var(--确认色);
@@ -91,10 +97,12 @@ body{
 }
 * {
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	user-select: none;
-	-webkit-user-select: none;
-	outline: 0;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none; 
+	outline: none;
 	-webkit-tap-highlight-color: transparent
 }
 ::-webkit-scrollbar {
@@ -110,7 +118,7 @@ body{
 .body>div:first-child{
 	margin-top: 10px;
 }
-div,p,span,a,button,input,textarea,select,option{
+div,p,span,a,button,input,textarea,select,option,textarea{
 	/*用到的元素*/
 	margin: 0;
 	padding: 0;
@@ -131,6 +139,23 @@ div{
 	align-items: center;
 	justify-content: space-between;
 }
+p,textarea{
+	text-indent: 2em;
+	text-align: justify;
+}
+a{
+	width: 100%;
+	display: inline-block;
+	 text-decoration: none
+}
+.text-align-left
+{
+	text-align: left;
+}
+.text-align-right{
+	text-align: right;
+}
+
 /*文字样式*/
 .big-title{
 	color: var(--纯色文字)!important;
@@ -225,15 +250,69 @@ div{
     flex-shrink: 0;
 }
 /*sb-card 内部组件*/
-/*select&option*/
+/*select*/
 .sb-card-foot select{
 	width: 10.5rem;
 	min-height: 30px;
 	font-size: inherit;
 }
-.sb-card-foot option{
-	font-size: inherit;
-	text-align: center;
+/*textarea高度自适应*/
+.flex-text-wrap {
+    position: relative;
+
+    *zoom: 1;
+}
+
+textarea,
+.flex-text-wrap {
+    outline: 0;
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    *padding-bottom: 0 !important;
+}
+
+.flex-text-wrap textarea,
+.flex-text-wrap pre {
+    white-space: pre-wrap;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: inherit;
+    
+    *white-space: pre;
+    *word-wrap: break-word;
+}
+
+.flex-text-wrap textarea {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    resize: none;
+
+    /* IE7 box-sizing fudge factor */
+    *height: 94%;
+    *width: 94%;
+}
+
+.flex-text-wrap pre {
+    display: block;
+    visibility: hidden;
+}
+
+textarea,
+.flex-text-wrap pre {
+    /*
+     * Add custom styling here
+     * Ensure that typography, padding, border-width (and optionally min-height) are identical across textarea & pre
+     */
+    font-size: inherit;
+    border: inherit;
 }
 /*input text 点击效果*/
 .sb-card .input-text{
@@ -244,19 +323,27 @@ div{
 	display: flex;
 	flex-direction: column;
 }
-.sb-card [type=text]::-webkit-input-placeholder{
+.sb-card [type=text]::-webkit-input-placeholder,
+.sb-card textarea::-webkit-input-placeholder{
 	color: initial;
 	opacity: .57;
 	transition: color .2s ease-in-out;
 }
-.sb-card [type=text]:hover::-webkit-input-placeholder{
+.sb-card textarea::-webkit-input-placeholder{
+	text-indent: 0;
+	text-align: center;
+}
+.sb-card [type=text]:hover::-webkit-input-placeholder,
+.sb-card textarea:hover::-webkit-input-placeholder{
 	opacity: .3;
 }
-.sb-card [type=text]:focus::-webkit-input-placeholder{
+.sb-card [type=text]:focus::-webkit-input-placeholder,
+.sb-card textarea:focus::-webkit-input-placeholder{
 	color: var(--强调色)!important;
 	transition: color .2s ease-in-out;
 }
-.sb-card [type=text]+.focus-line{
+.sb-card [type=text]+.focus-line,
+.sb-card textarea+.focus-line{
 	margin: 0 auto;
 	height: 2px;
 	width: 0%;
@@ -264,7 +351,8 @@ div{
 	display: inline-block;
 	transition: width .3s ease-in-out; 
 }
-.sb-card [type=text]:focus+.focus-line{
+.sb-card [type=text]:focus+.focus-line,
+.sb-card textarea:focus+.focus-line{
 	width: 100%;
 	transition: width .2s ease-in-out; 
 }
