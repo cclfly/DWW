@@ -126,6 +126,7 @@ div,p,span,a,button,input,textarea,select,option,textarea{
 	background-color: transparent;
 	font-family: inherit;
 	text-align: center;
+	text-decoration: none;
 	overflow: hidden;
 }
 [type=checkbox]{

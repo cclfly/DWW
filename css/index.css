@@ -348,116 +348,112 @@
 	font-weight: 600;
 	text-align: left;
 }
-.menu_head{
+.menu-head{
 	width: 100%;
-	height: 140px;
+	height: 8.75rem;
 	background-image: url(../image/menu.png);
 	background-repeat:no-repeat;
-	background-size: auto 160px;
+	background-size: auto 10rem;
     background-position:50% 50%;
-	background-color: #F29600;
+	background-color: var(--主色);
 }
-.menu_person{
+.menu-index .menu-person{
 	width: 100%;
-	height: 114px;
+	height: 7.125rem;
 	display: flex;
+	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 }
-.menu_person_icon{
-	width: 60px;
-	height: 60px;
-	border-radius: 60px;
-	background-color: #F1765A;
+.menu-person-icon{
+	width: 3.75rem;
+	height: 3.75rem;
+	border-radius: 100%;
+	background-color: var(--浅主色);
 }
-.menu_person_name{
-	width: 110px;
-	max-height: 50px;
-	color: #F0F0F0;
-	font-size: 22px;
-	font-weight: 500;
+.menu-person-name{
+	width: 10rem;
+	max-height: 3.125rem;
+	color: #F0F0F0!important;
 	text-align: center;
 	text-shadow: 2px 2px 2px #323232;
-	overflow: hidden;
+	overflow: visible;
 }
-.menu_person_setting{
-	width: 27px;
-	height: 27px;
-	border-radius: 25px;
-	background-color: rgba(5,5,5,.5);
-	padding: 3px;
-}
-.menu_person_setting svg{
-	width: 21px;
-	height: 21px;
-	fill: #F0F0F0;
-}
-.menu_school{
+.menu-school{
 	width: 100%;
 	height: 26px;
-	color: #F0F0F0;
-	font-size: 16px;
-	font-weight: 500;
+	color: #F0F0F0!important;
 	letter-spacing: 2px;
 	text-shadow: 2px 2px 2px #323232;
 	padding: 3px 5px 3px 10px;
 	background-color: rgba(50,50,50,0.35);
 }
-.menu_body{
+.menu-index .menu-body{
 	width: 100%;
-	height: calc(100vh - 185px);
-	min-height: 320px;
+	height: calc(100vh - 8.75rem);
+	display: flex;
+	
 }
-.menu_list{
+.menu-list-top{
+	overflow: scroll;/*无法响应触摸，要用滚轮*/
+}
+.menu-index  .menu-list{
 	width: 100%;
-	height: 45px;
-	padding: 10px;
-	padding-top: 7px;
+	min-height: 2.875rem;
+	padding: .1875rem .625rem;
+	padding-right: .375rem;
 	display: flex;
 	align-items: center;
+	flex-direction: row;
+	justify-content: flex-start;
 }
-.menu_list_tag{
-	height: 20px;
+.menu-list-tag{
+	height: 1.5rem;
 	width: 100%;
-	color: #929292;
-	font-size: 15px;
-	font-weight: 500;
-	padding-top: 5px;
-	padding-left: 10px;
-	margin-bottom: 5px;
+	padding-left: .875rem;
+	margin: 0;
+	margin-top: .125rem;
 }
-.menu_border{
-	box-shadow: 1px 0 2px #727272;
+.menu-list-top>div{
+	border-bottom: solid 1px var(--分隔线);
 }
-.menu_icon_img{
-	width: 25px;
-	height: 25px;
-	border-radius: 15px;
-	margin-right: 10px;
-	margin-left: 10px;
-	background-color: #F0AD4E;
+.menu-list-top>div:last-of-type{
+	border: none;
 }
-.menu_icon_svg{
-	width: 25px;
-	height: 25px;
-	margin-right: 10px;
-	margin-left: 10px;
-	fill: #505050;
-	transform: scale(1,-1);
+.menu-choosed a{
+	color: var(--主色)!important;
 }
-.menu_list_text{
-	width: calc(100% - 55px);
-	height: 25px;
-	color: #323232;
-	font-size: 16px;
-	line-height: 25px;
-	font-weight: 500;
-	overflow: hidden;
+.menu-icon-img{
+	width: 2rem;
+	height: 2rem;
+	border-radius: 100%;
+	margin-left: .25rem;
+	margin-right: .375rem;
+	background-color: var(--浅主色);
+}
+.menu-icon-svg{
+	margin-right: .375rem;
+}
+.menu-index  .menu-list-text{
+	width: calc(100% - 2.375rem);
 	display: inline-block;
 }
-.menu_new_community svg{
-	fill: #929292;
+.menu-important-svg{
+	fill: var(--深主色);
 }
-.menu_list_exit{
-	text-align: end;
+.menu-index .menu-list-bottom{
+	height: 2.875rem;
+	padding: 0;
+	border-top: solid 1px var(--分隔线);
 }
+.menu-index .menu-list-bottom a{
+	height: 2.875rem;
+	padding: 0 .375rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-right: solid 1px var(--分隔线);
+}
+
+	

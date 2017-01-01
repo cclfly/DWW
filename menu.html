@@ -7,7 +7,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>菜</title>
-		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui-use.css" />
 		<link rel="stylesheet" type="text/css" href="css/sb.css" />
 		<link rel="stylesheet" href="css/index.css" />
 		<script type="text/javascript" src="js/mui.min.js"></script>
@@ -325,75 +325,100 @@
 
 		<!-- 主界面不动、菜单移动 -->
 		<!-- 侧滑导航根容器 -->
-		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in menu-index">
 			<!-- 菜单容器 -->
 			<aside class="mui-off-canvas-left" id="offCanvasSide">
 				<div class="mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<!-- 菜单具体展示内容 -->
-						<div class="menu_head">
-							<div class="menu_person">
-								<img class="menu_person_icon" src="image/jdzs_icon.png" /><!--用户头像-->
-								<div class="menu_person_name">{你的名字}</div>
-								<div class="menu_person_setting">
-									<svg class="menu_person_svg">
-										<use xlink:href="#ic_setting"></use>
-									</svg>
-								</div>
+						<div class="menu-head">
+							<div class="menu-person">
+								<img class="menu-person-icon" src="image/jdzs_icon.png" /><!--用户头像-->
+								<div class="big-title menu-person-name">{你的名字}</div>
 							</div>
-							<div class="menu_school">{四川警察学院}</div>
+							<div class="small-text menu-school">{四川警察学院}</div>
 						</div>
-						<div class="menu_body">
-							<div class="menu_new_community menu_border">
-								<div class="menu_list">
-									<svg class="menu_icon_svg menu_person_svg">
+						<div class="menu-body">
+							<div class="menu-list-top">
+							<div class="menu-new-community">
+								<div class="menu-list">
+									<svg class="menu-icon-svg menu-important-svg">
 										<use xlink:href="#ic_personadd"></use>
 									</svg>
-									<a class="menu_list_text" href="join_community.html">加入新社团</a>
+									<a class="menu-list-text normal-text" href="mine-community.html">加入新社团</a>
 								</div>
 							</div>
-							<div class="menu_choose_community">
-								<div class="menu_list_tag">选择社团</div>
-								<div class="menu_list"><!--poker选择器-->
-									<img class="menu_icon_img" src="image/jdzs_icon.png"/><!--社团图标-->
-									<a class="menu_list_text">金盾之声广播影视中心</a>
+							<div class="menu-choose-community ">
+								<div class="menu-list-tag small-title">我的社团</div>
+								<div class="menu-list menu-choosed"><!--给当前显示的社团添加类menu-choosed-->
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">金盾之声广播影视中心</a>
+								</div>
+								<div class="menu-list">
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">{社团名字}</a>
+								</div>
+								<div class="menu-list">
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">{列出已加入的社团}</a>
+								</div>
+								<div class="menu-list">
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">{有相应管理权限才显示社团管理↓}</a>
 								</div>
 							</div>
-							<div class="menu_mange_community menu_border">
-								<div class="menu_list_tag">社团管理</div>
-								<div class="menu_list">
-									<svg class="menu_icon_svg menu_person_svg">
+							<div class="menu-mange-community">
+								<div class="menu-list-tag small-title">社团管理</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
 										<use xlink:href="#ic_assignment"></use>
 									</svg>
-									<a class="menu_list_text">信息管理</a>
+									<a class="menu-list-text normal-text">信息管理</a>
 								</div>
-								<div class="menu_list">
-									<svg class="menu_icon_svg menu_person_svg">
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
 										<use xlink:href="#ic_assignment_ind"></use>
 									</svg>
-									<a class="menu_list_text">人员管理</a>
+									<a class="menu-list-text normal-text">人员管理</a>
+								</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#ic_assignment_ind"></use>
+									</svg>
+									<a class="menu-list-text normal-text">管理员设置</a>
 								</div>
 							</div>
 							<div class="menu_more">
-								<div class="menu_list">
-									<svg class="menu_icon_svg menu_person_svg">
+								<div class="menu-list-tag small-title">更多</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
 										<use xlink:href="#ic_library_add"></use>
 									</svg>
-									<a class="menu_list_text">新社团申请</a>
+									<a class="menu-list-text normal-text">新社团申请</a>
 								</div>
-								<div class="menu_list">
-									<svg class="menu_icon_svg menu_person_svg">
-										<use xlink:href="#ic_jdzs"></use>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#ic_help"></use>
 									</svg>
-									<a class="menu_list_text">关于</a>
+									<a class="menu-list-text normal-text">帮助</a>
 								</div>
 							</div>
 						</div>
-						<div class="menu_list menu_list_exit">
-							<a class="menu_list_text">退出</a>
-							<svg class="menu_icon_svg menu_person_svg">
-								<use xlink:href="#ic_exit"></use>
-							</svg>
+						
+						<div class="menu-list menu-list-bottom">
+							<a class="menu-list-text">
+								<svg class="menu-icon-svg ">
+									<use xlink:href="#ic_setting"></use>
+								</svg>
+								设置
+							</a>
+							<a class="menu-list-text">
+								<svg class="menu-icon-svg">
+									<use xlink:href="#ic_exit"></use>
+								</svg>
+								退出
+							</a>
+						</div>
 						</div>
 					</div>
 				</div>
