@@ -417,7 +417,6 @@ textarea,
 /*svg*/
 svg{
 	fill: var(--图标色);
-	transform: scale(1,-1);
 	width: 2rem;
 	height: 2rem;
 	padding: .125rem;
