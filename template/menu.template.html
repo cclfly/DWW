@@ -1,0 +1,52 @@
+<div class="mui-off-canvas-wrap mui-draggable mui-slide-in menu-index">
+	<!-- 菜单容器 -->
+	<aside class="mui-off-canvas-left" id="offCanvasSide">
+		{{{menuBody}}}
+	</aside>
+	<!-- 主页面容器 -->
+	<div class="mui-inner-wrap">
+		<!-- 主页面标题 -->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-action-menu mui-pull-left" href="#offCanvasSide">
+				<svg class="menu-icon">
+					<use xlink:href="#md_menu"></use>
+				</svg>
+			</a>
+			<h1 class="mui-title">当前页面标题</h1>
+			<!--显示当前页面标题-->
+			<a class="mui-icon mui-action-menu mui-pull-left" href="">
+				<!--分享-->
+				<svg class="menu-icon">
+					<use xlink:href="#md_share"></use>
+				</svg>
+			</a>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="community.html">
+				<svg class="mui-icon">
+					<use xlink:href="#md_description"></use>
+				</svg>
+				<span class="tab-line tab-line-1"></span>
+			</a>
+			<a class="mui-tab-item" href="people.html">
+				<svg class="mui-icon">
+					<use xlink:href="#md_people"></use>
+				</svg>
+				<span class="tab-line tab-line-2"></span>
+			</a>
+			<a class="mui-tab-item" href="mine.html">
+				<svg class="mui-icon">
+					<use xlink:href="#md_assignment_ind"></use>
+				</svg>
+				<span class="tab-line tab-line-3"></span>
+			</a>
+		</nav>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				{{{mainBody}}}
+			</div>
+		</div>
+		<div class="mui-off-canvas-backdrop"></div>
+	</div>
+</div>

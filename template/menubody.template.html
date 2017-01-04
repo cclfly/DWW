@@ -1,0 +1,96 @@
+<!-- 菜单具体展示内容 -->
+<div class="menu-head">
+	<div class="menu-person">
+		<img class="menu-person-icon" src={{icon}} />
+		<!--用户头像-->
+		<div class="big-title menu-person-name">{{name}}</div>
+	</div>
+	<div class="small-text menu-school">{{school}}</div>
+</div>
+<div class="menu-body">
+	<div class="menu-list-top">
+		<div class="menu-new-community">
+			<div class="menu-list">
+				<svg class="menu-icon-svg menu-important-svg">
+					<use xlink:href="#md_person_add"></use>
+				</svg>
+				<a class="menu-list-text normal-text" href="mine-community.html">加入新社团</a>
+			</div>
+		</div>
+		<div class="menu-choose-community ">
+			<div class="menu-list-tag small-title">我的社团</div>
+			{{#community}}
+			<div class="menu-list {{#slct}}menu-choosed{{/slct}}" index={{index}}>
+				<!--给当前显示的社团添加类menu-choosed-->
+				<img class="menu-icon-img" src={{icon}} />
+				<!--社团图标-->
+				<a class="menu-list-text normal-text">{{name}}</a>
+			</div>
+			{{/community}} {{^community}}
+			<div class="menu-list">
+				<img class="menu-icon-img" />
+				<a class="menu-list-text normal-text">未加入社团</a>
+			</div>
+			{{/community}}
+		</div>
+		{{#ismanager}}
+		<div class="menu-mange-community">
+			<div class="menu-list-tag small-title">社团管理</div>
+			<div class="menu-list">
+				<svg class="menu-icon-svg">
+					<use xlink:href="#md_forum"></use>
+				</svg>
+				<a class="menu-list-text normal-text">社团会议室</a>
+			</div>
+			<div class="menu-list">
+				<svg class="menu-icon-svg">
+					<use xlink:href="#md_assignment"></use>
+				</svg>
+				<a class="menu-list-text normal-text">信息管理</a>
+			</div>
+			<div class="menu-list">
+				<svg class="menu-icon-svg">
+					<use xlink:href="#md_account_box"></use>
+				</svg>
+				<a class="menu-list-text normal-text">人员管理</a>
+			</div>
+			<div class="menu-list">
+				<svg class="menu-icon-svg">
+					<use xlink:href="#md_perm_contact_calendar"></use>
+				</svg>
+				<a class="menu-list-text normal-text">管理员设置</a>
+			</div>
+		</div>
+		{{/ismanager}}
+		<div class="menu_more">
+			<div class="menu-list-tag small-title">更多</div>
+			<div class="menu-list">
+				<svg class="menu-icon-svg">
+					<use xlink:href="#md_library_add"></use>
+				</svg>
+				<a class="menu-list-text normal-text">新社团申请</a>
+			</div>
+			<div class="menu-list">
+				<svg class="menu-icon-svg">
+					<use xlink:href="#md_live_help"></use>
+				</svg>
+				<a class="menu-list-text normal-text">帮助</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="menu-list menu-list-bottom">
+		<a class="menu-list-text">
+			<svg class="menu-icon-svg ">
+				<use xlink:href="#md_settings"></use>
+			</svg>
+			设置
+		</a>
+		<a class="menu-list-text">
+			<svg class="menu-icon-svg">
+				<use xlink:href="#md_exit_to_app"></use>
+			</svg>
+			退出
+		</a>
+	</div>
+</div>
