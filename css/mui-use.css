@@ -31,10 +31,10 @@ aside,header{
     -webkit-overflow-scrolling: touch;
 }
 .mui-bar-nav~.mui-content {
-    padding-top: 44px;
+    padding-top: 5.625rem;
 }
 .mui-bar-tab~.mui-content {
-    padding-bottom: 50px;
+    padding-bottom: 0;
 }
 .mui-scroll-wrapper {
     position: absolute;
