@@ -92,15 +92,27 @@ $(function() {
 	
 //事件处理
 	//菜单上下滑动
-	$('.menu-list-top').on('dragstart',function(){
-		var buf = 0;
+	$('.menu-list-top')[0].addEventListener('dragstart',function(e){
+		var bufY = 0-e.detail.deltaY;
+		var bufX = 0-e.detail.deltaX;
+		var fnStopPropagation = function(e){e.stopPropagation();}
+		if(Math.abs(bufY)<Math.abs(bufX))
+		{
+			return;
+		}
+		$('aside')[0].addEventListener('drag',fnStopPropagation);
 		var fnDrag = function(e){
-			$(this).scrollTop($(this).scrollTop()+(buf-e.detail.deltaY));
-			buf = e.detail.deltaY;
+			var sub = bufY-e.detail.deltaY;
+			if(sub!=0){
+				$(this).scrollTop($(this).scrollTop()+(sub));
+				bufY = e.detail.deltaY;
+			}
 		};
 		this.addEventListener('drag',fnDrag);
 		$(this).one('dragend',function(){
 			this.removeEventListener('drag',fnDrag);
+			//$('aside')[0].addEventListener('drag',function(e){});
+			$('aside')[0].removeEventListener('drag',fnStopPropagation);
 		});
 	});
 	//菜单“社团”点击
