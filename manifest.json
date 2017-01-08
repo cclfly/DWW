@@ -272,16 +272,40 @@
 				"refer": [],
 				"priority": 0
 			},
-			"index.html": {
+			"menu.html": {
 				"resources": [
-					"js/main.js",
 					"css/index.css",
 					"css/sb.css",
-					"js/loadsvg.js",
 					"js/mui.min.js",
-					"css/mui-use.css",
+					"image/menu.png",
+					"image/jdzs_icon.png",
+					"css/mui-use.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"index.html": {
+				"resources": [
+					"image/link_icon/wechat.png",
+					"template/mine.template.html",
+					"js/main.js",
+					"css/sb.css",
+					"template/contacts.template.html",
+					"image/link_icon/weibo.png",
+					"image/link_icon/qzone.png",
+					"css/icon.css",
 					"js/jquery-2.1.4.min.js",
-					"svg/svg-sprite.html"
+					"svg/svg-sprite-min.html",
+					"image/link_icon/qq.png",
+					"image/jdzs.png",
+					"css/index.css",
+					"js/vue.js",
+					"js/mui.min.js",
+					"image/menu.png",
+					"image/jdzs_icon.png",
+					"css/mui-use.css",
+					"template/community.template.html",
+					"template/menu.template.html"
 				],
 				"refer": [],
 				"priority": 0

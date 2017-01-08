@@ -1,5 +1,4 @@
-<div class="body mine" v-bind:class="{active:activePage=='mine'}">
-
+<div class="body mine" v-bind:class="{'body-active':activePage=='mine'}">
 	<div class="sb-paper">
 		<div class="sb-paper-content normal-text">
 			<p>{name}</p>
@@ -18,51 +17,65 @@
 		</div>
 		<div class="sb-card-body normal-text">
 			<div class="sb-card-list">
-				<svg>
-					<use xlink:href="#ic_call"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_call"></use>/>
+					</svg>
+				</a>
 				<div class="phone-number">
 					<span class="input-text">
 								{13123456789}
 							</span>
 					<span class="point-text">由[name12345678]于2016/12/06添加</span>
 				</div>
-				<svg>
-					<use xlink:href="#ic_delete"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_delete"></use>/>
+					</svg>
+				</a>
 			</div>
 			<div class="sb-card-list">
-				<svg>
-					<use xlink:href="#ic_call"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_call"></use>/>
+					</svg>
+				</a>
 				<div class="phone-number">
 					<span class="input-text">
 								{13123456789}
 							</span>
 					<span class="point-text">由[name]于{time}添加</span>
 				</div>
-				<svg>
-					<use xlink:href="#ic_delete"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_delete"></use>/>
+					</svg>
+				</a>
 			</div>
 			<div class="sb-card-list">
-				<svg>
-					<use xlink:href="#ic_add"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_add"></use>/>
+					</svg>
+				</a>
 				<span class="input-text">
 							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
 							<span class="focus-line"></span>
 				</span>
-				<svg>
-					<use xlink:href="#ic_done"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_done"></use>/>
+					</svg>
+				</a>
 			</div>
 		</div>
 		<div class="sb-card-body small-text">
 			<div class="sb-card-list">
-				<svg>
-					<use xlink:href="#ic_call"></use>/>
-				</svg>
+				<a>
+					<svg>
+						<use xlink:href="#md_person"></use>/>
+					</svg>
+				</a>
 				<div class="sb-card-body small-text">
 					<div class="sb-card-list">
 						<span>年级：</span>
@@ -111,17 +124,24 @@
 					<div class="sb-card-list">
 						<span>学号：</span>
 						<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
+							<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
+							<span class="focus-line"></span>
 						</span>
 					</div>
 				</div>
+				<a>
+					<svg>
+						<use xlink:href="#md_null"></use>/>
+					</svg>
+				</a>
 			</div>
 		</div>
 		<div class="sb-card-foot small-title foot-one-svg">
-			<svg>
-				<use xlink:href="#ic_done"></use>/>
-			</svg>
+			<a>
+				<svg>
+					<use xlink:href="#md_done"></use>/>
+				</svg>
+			</a>
 		</div>
 	</div>
 

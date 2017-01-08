@@ -1,15 +1,16 @@
+var fnStopPropagation = function(e) {
+	e.stopPropagation();
+}
 $(function() {
 	//加载页面
 	$.ajax({
 		type: "get",
-		url: "svg/svg-sprite.html",
+		url: "svg/svg-sprite-min.html",
 		async: false,
 		success: function(data) {
 			new Vue({
 				el: "#svg",
-				data: {
-					svg: data
-				}
+				template:data
 			});
 		}
 	});
@@ -88,7 +89,15 @@ $(function() {
 		activePage:'comm',
 		comm: {
 			comPeopleNum:5,
-			comImage: 'image/jdzs.png'
+			comImage: 'image/jdzs.png',
+			
+			scrollY:0
+		},cont:{
+			
+			scrollY:0
+		},mine:{
+			
+			scrollY:0
 		}
 	};
 //获取模板
@@ -145,17 +154,33 @@ $(function() {
 //事件处理
 	//导航
 	$('.mui-tab-item').on('tap',function(){
-		viewjson.activePage = $(this).attr('href');
+		if(viewjson.activePage == $(this).attr('href'))
+		{
+			mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,100);
+		}
+		else
+		{
+			viewjson[viewjson.activePage].scrollY = mui('.mui-scroll-wrapper').scroll().y;
+			viewjson.activePage = $(this).attr('href');
+			mui('.mui-scroll-wrapper').scroll().scrollTo(0,viewjson[viewjson.activePage].scrollY,0);
+		}
 	});
 	//主页面上下滑动
 	mui('.mui-scroll-wrapper').scroll();
+	//设置侧滑菜单响应范围
+	$('.mui-inner-wrap')[0].addEventListener('dragstart',function(e){
+		if(e.detail.center.x > 12 && !mui('.mui-off-canvas-wrap').offCanvas().isShown())
+		{
+			this.addEventListener('drag',fnStopPropagation);
+		}
+	});
+	$('.mui-inner-wrap')[0].addEventListener('dragend',function(e){
+		this.removeEventListener('drag',fnStopPropagation);
+	});
 	//菜单上下滑动
 	$('.menu-list-top')[0].addEventListener('dragstart', function(e) {
 		var bufY = 0 - e.detail.deltaY;
 		var bufX = 0 - e.detail.deltaX;
-		var fnStopPropagation = function(e) {
-			e.stopPropagation();
-		}
 		if(Math.abs(bufY) < Math.abs(bufX)) {
 			return;
 		}

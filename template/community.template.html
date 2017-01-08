@@ -1,12 +1,12 @@
-<div class="body community" v-bind:class="{active:activePage=='comm'}">
+<div class="body community" v-bind:class="{'body-active':activePage=='comm'}">
 	<div class="sb-card community-info">
 		<span id="info-input-img" class="community-img">
-					<img class="info-input-active" v-bind:src="comm.comImage" />
+					<img class="info-input-active" src="image/jdzs.png" />
 					<!--这里的两张图片与社团相对应-->
 				</span>
 		<div class="sb-card-head normal-title">
 			金盾之声广播影视中心
-			<span class="point-text">社团共有{{comm.comPeopleNum}}个成员</span>
+			<span class="point-text">社团共有{value}个成员</span>
 		</div>
 		<div class="sb-card-body normal-text">
 			社团简介
@@ -59,7 +59,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="sb-card community-link">
 		<!--body竖排，head、foot横排，操作事件放foot-->
 		<div class="sb-card-head normal-title">
@@ -88,7 +87,6 @@
 			</a>
 		</div>
 	</div>
-
 	<div class="sb-card community-post">
 		<div class="sb-card-head normal-title">
 			{公告1标题}
@@ -100,7 +98,6 @@
 			</p>
 		</div>
 	</div>
-
 	<div class="sb-card community-post">
 		<div class="sb-card-head normal-title">
 			首行缩进
@@ -112,5 +109,4 @@
 			</p>
 		</div>
 	</div>
-
 </div>

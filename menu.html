@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>菜</title>
 		<link rel="stylesheet" type="text/css" href="css/mui-use.css" />
 		<link rel="stylesheet" type="text/css" href="css/sb.css" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/index.css" />
 		<script type="text/javascript" src="js/mui.min.js"></script>
-		<title>注册-regist</title>
 	</head>
 
 	<body>
@@ -272,7 +273,7 @@
 				<symbol viewBox="0 0 24 24" id="md_chevron_left"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></symbol>
 				<symbol viewBox="0 0 24 24" id="md_chevron_right"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></symbol>
 				<symbol viewBox="0 0 24 24" id="md_expand_less"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></symbol>
-				<symbol viewBox="-50 -30 100 60" id="md_expand_more"><path d="M38.3,30.9L0-7.3l-38.3,38.2L-50,19.1l50-50l50,50L38.3,30.9z"/></symbol>
+				<symbol viewBox="0 0 24 24" id="md_expand_more"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></symbol>
 				<symbol viewBox="0 0 24 24" id="md_first_page"><path d="M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"/></symbol>
 				<symbol viewBox="0 0 24 24" id="md_fullscreen"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></symbol>
 				<symbol viewBox="0 0 24 24" id="md_fullscreen_exit"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></symbol>
@@ -390,131 +391,158 @@
 				<symbol viewBox="-50 -40 100 80"  id="md_change_people"><path d="M50-20v50c0,5.5-4.5,10-10,10h-80c-5.5,0-10-4.5-10-10v-60c0-5.5,4.5-10,10-10h30L0-30h40C45.5-30,50-25.5,50-20z M5.1-6.7C4,0.1,9.9,6,16.7,4.9c4.2-0.7,7.5-4.1,8.2-8.2C26-10.1,20.1-16,13.3-14.9C9.2-14.2,5.8-10.8,5.1-6.7z M-36.8,2.4c0-7.2,5.8-13.1,13.1-13.1v6.6l8.7-8.7l-8.7-8.8v6.6c-9.7,0-17.5,7.8-17.5,17.5c0,3.4,1,6.6,2.7,9.3l3.2-3.2C-36.3,6.8-36.8,4.7-36.8,2.4z M-6.2,2.5c0-3.5-1-6.6-2.7-9.2l-3.2,3.2c1,1.8,1.5,3.9,1.5,6.1c0,7.2-5.8,13.1-13.1,13.1V9.1l-8.7,8.7l8.7,8.8V20C-14,20-6.2,12.2-6.2,2.5z M35,20c0-6.6-13.4-10-20-10S-5,13.4-5,20v5h40V20z"/></symbol>
 			</svg>
 		</div>
-
-		<div class="body regist">
-			
-			<div class="sb-card choose_school">
-				<div class="sb-card-head normal-title">注册</div>
-				<div class="sb-card-foot small-title">
-					<div class="sb-card-list">
-						<a><svg>
-							<use xlink:href="#md_public"></use>/>
-						</svg></a>
-						<select name="new_community"><!--picker选择器，3级（省、市、区）-->
-							<option value="" selected="selected" disabled="disabled">--请选择地区--</option>
-							<option value="C1">1111111111</option>
-							<option value="C2">2地区2</option>
-							<option value="C3">3地区3</option>
-							<option value="C4">4地区4</option>
-						</select>
-					</div>
-					<div class="sb-card-list">
-						<a><svg>
-							<use xlink:href="#md_school"></use>/>
-						</svg></a>
-						<select name="new_community"><!--picker选择器，按地区选择学校-->
-							<option value="" selected="selected" disabled="disabled">--请选择学校--</option>
-							<option value="C1">1111111111</option>
-							<option value="C2">2学校2</option>
-							<option value="C3">3学校3</option>
-							<option value="C4">4学校4</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			
-			<div class="sb-card input-myinfo">
-				<div class="sb-card-head normal-title">
-					<span class="input-text">
-						<input class="normal-text" type="text" id="" size="14" placeholder="姓名"/>
-						<span class="focus-line"></span>
-					</span>
-					<span class="point-text">请填写真实姓名，不可更改</span>
-				</div>
-				<div class="sb-card-body normal-text">
-					<div class="sb-card-list">
-						<a><svg>
-							<use xlink:href="#md_call"></use>/>
-						</svg></a>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="请输入手机号"/>
-							<span class="focus-line"></span>
-						</span>
-					</div>
-					<div class="sb-card-list">
-						<a><svg>
-							<use xlink:href="#md_add"></use>/>
-						</svg></a>
-						<span class="input-text"><!--在这个输完一个自动出现下一个新号码输入框-->
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入更多号码"/>
-							<span class="focus-line"></span>
-						</span>
-					</div>
-				</div>
-				<div class="sb-card-body small-text">
-					<div class="sb-card-list">
-						<a><svg>
-							<use xlink:href="#md_call"></use>/>
-						</svg></a>
-						<div class="sb-card-body small-text">
-							<div class="sb-card-list">
-								<span>年级：</span>
-								<select name="new_community"><!--picker选择器-->
-									<option value="" selected="selected" disabled="disabled">--请选择--</option>
-									<option value="C1">1111111111</option>
-									<option value="C2">2学校2</option>
-									<option value="C3">3学校3</option>
-									<option value="C4">4学校4</option>
-								</select>
+		
+		<!-- 主界面不动、菜单移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in menu-index">
+			<!-- 菜单容器 -->
+			<aside class="mui-off-canvas-left" id="offCanvasSide">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+						<div class="menu-head">
+							<div class="menu-person">
+								<img class="menu-person-icon" src="image/jdzs_icon.png" /><!--用户头像-->
+								<div class="big-title menu-person-name">{你的名字}</div>
 							</div>
-							<div class="sb-card-list">
-								<span>大队：</span>
-								<select name="new_community"><!--picker选择器-->
-									<option value="" selected="selected" disabled="disabled">--请选择--</option>
-									<option value="C1">1111111111</option>
-									<option value="C2">2学校2</option>
-									<option value="C3">3学校3</option>
-									<option value="C4">4学校4</option>
-								</select>
+							<div class="small-text menu-school">{四川警察学院}</div>
+						</div>
+						<div class="menu-body">
+							<div class="menu-list-top">
+							<div class="menu-new-community">
+								<div class="menu-list">
+									<svg class="menu-icon-svg menu-important-svg">
+										<use xlink:href="#md_person_add"></use>
+									</svg>
+									<a class="menu-list-text normal-text" href="mine-community.html">加入新社团</a>
+								</div>
 							</div>
-							<div class="sb-card-list">
-								<span>区队：</span>
-								<select name="new_community"><!--picker选择器-->
-									<option value="" selected="selected" disabled="disabled">--请选择--</option>
-									<option value="C1">1111111111</option>
-									<option value="C2">2学校2</option>
-									<option value="C3">3学校3</option>
-									<option value="C4">4学校4</option>
-								</select>
+							<div class="menu-choose-community ">
+								<div class="menu-list-tag small-title">我的社团</div>
+								<div class="menu-list menu-choosed"><!--给当前显示的社团添加类menu-choosed-->
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">金盾之声广播影视中心</a>
+								</div>
+								<div class="menu-list">
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">{社团名字}</a>
+								</div>
+								<div class="menu-list">
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">{列出已加入的社团}</a>
+								</div>
+								<div class="menu-list">
+									<img class="menu-icon-img" src="image/jdzs_icon.png"/><!--社团图标-->
+									<a class="menu-list-text normal-text">{有相应管理权限才显示社团管理↓}</a>
+								</div>
 							</div>
-							<div class="sb-card-list">
-								<span>专业：</span>
-								<select name="new_community"><!--picker选择器-->
-									<option value="" selected="selected" disabled="disabled">--请选择--</option>
-									<option value="C1">1111111111</option>
-									<option value="C2">2学校2</option>
-									<option value="C3">3学校3</option>
-									<option value="C4">4学校4</option>
-								</select>
+							<div class="menu-mange-community">
+								<div class="menu-list-tag small-title">社团管理</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#md_forum"></use>
+									</svg>
+									<a class="menu-list-text normal-text">社团会议室</a>
+								</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#md_assignment"></use>
+									</svg>
+									<a class="menu-list-text normal-text">信息管理</a>
+								</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#md_account_box"></use>
+									</svg>
+									<a class="menu-list-text normal-text">人员管理</a>
+								</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#md_perm_contact_calendar"></use>
+									</svg>
+									<a class="menu-list-text normal-text">管理员设置</a>
+								</div>
 							</div>
-							<div class="sb-card-list">
-								<span>学号：</span>
-								<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-								</span>
+							<div class="menu_more">
+								<div class="menu-list-tag small-title">更多</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#md_library_add"></use>
+									</svg>
+									<a class="menu-list-text normal-text">新社团申请</a>
+								</div>
+								<div class="menu-list">
+									<svg class="menu-icon-svg">
+										<use xlink:href="#md_live_help"></use>
+									</svg>
+									<a class="menu-list-text normal-text">帮助</a>
+								</div>
 							</div>
+						</div>
+						
+						<div class="menu-list menu-list-bottom">
+							<a class="menu-list-text">
+								<svg class="menu-icon-svg ">
+									<use xlink:href="#md_settings"></use>
+								</svg>
+								设置
+							</a>
+							<a class="menu-list-text">
+								<svg class="menu-icon-svg">
+									<use xlink:href="#md_exit_to_app"></use>
+								</svg>
+								退出
+							</a>
+						</div>
 						</div>
 					</div>
 				</div>
-				<div class="sb-card-foot small-title foot-one-svg">
-					<a><svg>
-						<use xlink:href="#md_done"></use>/>
-					</svg></a>
+			</aside>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-action-menu mui-pull-left" href="#offCanvasSide">
+						<svg class="menu-icon">
+							<use xlink:href="#md_menu"></use>
+						</svg>
+					</a>
+					<h1 class="mui-title">当前页面标题</h1><!--显示当前页面标题-->
+					<a class="mui-icon mui-action-menu mui-pull-left" href=""><!--分享-->
+						<svg class="menu-icon">
+							<use xlink:href="#md_share"></use>
+						</svg>
+					</a>
+				</header>
+				<nav class="mui-bar mui-bar-tab">
+					<a id="defaultTab" class="mui-tab-item mui-active" href="community.html">
+						<svg class="mui-icon">
+							<use xlink:href="#md_description"></use>
+						</svg>
+						<span class="tab-line tab-line-1"></span>
+					</a>
+					<a class="mui-tab-item" href="people.html">
+						<svg class="mui-icon">
+							<use xlink:href="#md_people"></use>
+						</svg>
+						<span class="tab-line tab-line-2"></span>
+					</a>
+					<a class="mui-tab-item" href="mine.html">
+						<svg class="mui-icon">
+							<use xlink:href="#md_assignment_ind"></use>
+						</svg>
+						<span class="tab-line tab-line-3"></span>
+					</a>
+				</nav>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+
+					</div>
 				</div>
+				<div class="mui-off-canvas-backdrop"></div>
 			</div>
-			
-			
 		</div>
 	</body>
+
 </html>
