@@ -1,6 +1,6 @@
 /*复制的mui*/
 /*侧滑菜单mui-off-canvas*/
-.menu-index div{
+.mui-off-canvas-left div{
 	display: block;
 	text-align: left;
 }
@@ -10,7 +10,7 @@
 aside,header{
     display: block;
 }
-.mui-scroll-wrapper {
+.mui-scroll-wrapper{
     position: absolute;
     z-index: 2;
     top: 0;
@@ -19,7 +19,7 @@ aside,header{
     overflow: hidden;
     width: 100%;
 }
-.mui-scroll {
+.mui-scroll{
     position: absolute;
     z-index: 1;
     width: 100%;
