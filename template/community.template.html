@@ -1,12 +1,12 @@
 <div class="body community">
 	<div class="sb-card community-info">
 		<span id="info-input-img" class="community-img">
-					<img class="info-input-active" src="image/jdzs.png" />
+					<img class="info-input-active" v-bind:src="com.comImage" />
 					<!--这里的两张图片与社团相对应-->
 				</span>
 		<div class="sb-card-head normal-title">
 			金盾之声广播影视中心
-			<span class="point-text">社团共有{value}个成员</span>
+			<span class="point-text">社团共有{{com.comPeopleNum}}个成员</span>
 		</div>
 		<div class="sb-card-body normal-text">
 			社团简介

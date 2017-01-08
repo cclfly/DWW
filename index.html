@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/mui-use.css" />
 		<link rel="stylesheet" type="text/css" href="css/sb.css" />
 		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/icon.css" />
 
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="js/mui.min.js"></script>
@@ -17,12 +18,12 @@
 				swipeBack: false //停用右滑关闭功能
 			});
 		</script>
-		<script type="text/javascript" src="js/mustache.min.js"></script>
+		<script type="text/javascript" src="js/vue.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		<!-- 加载svg -->
-		<script type="text/javascript" src="js/loadsvg.js"></script>
+		<!-- 加载svg --
+		<script type="text/javascript" src="js/loadsvg.js"></script>-->
+		<div id="svg" v-once v-html="svg" style="display: none;"></div>
 	</head>
 	<body>
-		
 	</body>
 </html>
