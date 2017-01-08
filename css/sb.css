@@ -114,6 +114,10 @@ body{
 	min-width: 250px;
 	margin: 0 auto;
 	padding: 0 10px;
+	display: none;
+}
+.body-active{
+	display: block;
 }
 .body>div:first-child{
 	margin-top: 10px;
@@ -140,7 +144,7 @@ div{
 	align-items: center;
 	justify-content: space-between;
 }
-p,textarea{
+p{
 	text-indent: 2em;
 	text-align: justify;
 }
@@ -148,6 +152,13 @@ a{
 	width: 100%;
 	display: inline-block;
 	 text-decoration: none
+}
+.sb-card-list a{
+	width: auto;
+}
+.sb-card-foot a{
+	width: auto;
+	height: 2rem;
 }
 .text-align-left
 {
@@ -433,8 +444,9 @@ svg{
 	width: 1.5rem;
 	height: 1.5rem;
 }
-.foot-one-svg svg{
-	margin: auto;
+.foot-one-svg a{
+	width: 100%;
+	margin: 0 auto;
 }
 /*权限图标*/
 .admin-user{

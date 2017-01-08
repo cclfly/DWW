@@ -76,6 +76,17 @@
       "css/mui-use.css",
       "js/jquery-2.1.4.min.js",
       "image/jdzs.png"
+    ],
+    "refer": []
+  },
+  "menu.html": {
+    "resources": [
+      "css/index.css",
+      "css/sb.css",
+      "js/mui.min.js",
+      "image/menu.png",
+      "image/jdzs_icon.png",
+      "css/mui-use.css"
     ]
   }
 }
