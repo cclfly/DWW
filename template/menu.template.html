@@ -112,19 +112,19 @@
 			</a>
 		</header>
 		<nav class="mui-bar mui-bar-tab">
-			<a id="defaultTab" class="mui-tab-item mui-active" href="community.html">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="comm">
 				<svg class="mui-icon">
 					<use xlink:href="#md_description"></use>
 				</svg>
 				<span class="tab-line tab-line-1"></span>
 			</a>
-			<a class="mui-tab-item" href="people.html">
+			<a class="mui-tab-item" href="cont">
 				<svg class="mui-icon">
 					<use xlink:href="#md_people"></use>
 				</svg>
 				<span class="tab-line tab-line-2"></span>
 			</a>
-			<a class="mui-tab-item" href="mine.html">
+			<a class="mui-tab-item" href="mine">
 				<svg class="mui-icon">
 					<use xlink:href="#md_assignment_ind"></use>
 				</svg>
@@ -134,6 +134,13 @@
 		<div class="mui-content mui-scroll-wrapper">
 			<div id="viewPage" class="mui-scroll" v-html="activePage">
 				<!-- 主界面具体展示内容 -->
+				<style>
+					.body{display: none;}
+					.active{display: block;}
+				</style>
+				<div id="commPage"></div>
+				<div id="contPage"></div>
+				<div id="minePage"></div>
 			</div>
 		</div>
 		<div class="mui-off-canvas-backdrop"></div>

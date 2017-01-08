@@ -85,12 +85,14 @@ $(function() {
 		}]
 	};
 	var viewjson = {
-		com: {
+		activePage:'comm',
+		comm: {
 			comPeopleNum:5,
 			comImage: 'image/jdzs.png'
 		}
 	};
-	//获取模板
+//获取模板
+	//菜单
 	$.ajax({
 		url: "template/menu.template.html",
 		async: false,
@@ -98,30 +100,53 @@ $(function() {
 			$("body").append(data);
 		}
 	});
-	var aViewPage = [];
+	//社团
 	$.ajax({
 		url:"template/community.template.html",
 		async:false,
 		success:function(data){
-			aViewPage[0] = data;
+			new Vue({
+				el:"#commPage",
+				template:data,
+				data:viewjson
+			});
 		}
 	});
-	//渲染模板
+	//通讯录
+	$.ajax({
+		url:"template/contacts.template.html",
+		async:false,
+		success:function(data){
+			new Vue({
+				el:"#contPage",
+				template:data,
+				data:viewjson
+			});
+		}
+	});
+	//个人
+	$.ajax({
+		url:"template/mine.template.html",
+		async:false,
+		success:function(data){
+			new Vue({
+				el:"#minePage",
+				template:data,
+				data:viewjson
+			});
+		}
+	});
+//渲染模板
 	var tmplMenu = new Vue({
 		el: "#offCanvasSide", //"#offCanvasSide",
 		data: datajson
 	});
-	var tmplViewPageActive = new Vue({
-		el: "#viewPage",
-		data: {
-			activePage: aViewPage[0]
-		}
-	});
-	var tmplViewPage = new Vue({
-		el: "#viewPage",
-		data: viewjson
-	});
+	
 //事件处理
+	//导航
+	$('.mui-tab-item').on('tap',function(){
+		viewjson.activePage = $(this).attr('href');
+	});
 	//主页面上下滑动
 	mui('.mui-scroll-wrapper').scroll();
 	//菜单上下滑动
@@ -159,5 +184,17 @@ $(function() {
 		datajson.selected = this.getAttribute('index');
 		$($(this).parent().children('.menu-list')[datajson.selected]).addClass('menu-choosed');
 		datajson.community[datajson.selected].slct = true;
+	});
+	
+	//通讯录点击展开关闭
+	mui('.contacts-info').on('tap', '.contacts-name', function() {
+		var oInfo = this.parentNode.getElementsByClassName('contacts-detail')[0];
+		if(oInfo.classList.contains('contacts-detail-hidden')) {
+			oInfo.classList.remove('contacts-detail-hidden');
+			this.classList.remove('contacts-name-show');
+		} else {
+			oInfo.classList.add('contacts-detail-hidden');
+			this.classList.add('contacts-name-show');
+		}
 	});
 });
