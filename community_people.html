@@ -10,9 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/sb.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<script type="text/javascript" src="js/mui.min.js"></script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="js/jquery.flexText.min.js"></script>
-		<title>社团信息管理-community-info-manage</title>
+		<title>社团成员管理-community-people</title>
 	</head>
 
 	<body>
@@ -346,232 +344,307 @@
 
 		</div>
 
-		<div class="body community-info-manage">
-			<div class="sb-card post-input">
-				<div class="sb-card-head normal-title">
-					<span class="input-text">
-						<input type="text" class="normal-text" id="" size="14" placeholder="请输入公告标题"/>
-						<span class="focus-line"></span>
-					</span>
+		<div class="body community-people">
+			<div class="sb-paper community-people-check">
+				<div class="sb-paper-content normal-text">
+					<p>{name}</p>
+					<p>申请加入{部门}</p>
+				</div>
+				<div class="sb-paper-motion">
+					<button class="big-button-text done" title="操作">批准</button>
+					<button class="big-button-text cancel" title="操作">拒绝</button>
+				</div>
+			</div>
+
+			<div class="sb-card community-people-manage">
+				<div class="sb-card-head normal-title">社团成员管理</div>
+				<div class="sb-card-foot small-button-text">
+					<select name="年级" id="">
+						<option>{年级}</option>
+						<option>{2012}</option>
+						<option>{2013}</option>
+						<option>{2014}</option>
+					</select>
+					<select name="大队" id="">
+						<option>{大队}</option>
+					</select>
+					<select name="专业" id="">
+						<option>{专业}</option>
+					</select>
+					<select name="区队" id="">
+						<option>{区队}</option>
+					</select>
 				</div>
 				<div class="sb-card-body normal-text">
 					<div class="sb-card-list">
-						<span class="input-text">
-							<textarea class="post-input-textarea" wrap="hard" placeholder="请输入公告内容"></textarea>
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-5" title="软件管理员"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
 						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-4" title="学校管理员"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
+					</div>
+					<div class="sb-card-list">
+						<input type="checkbox"></input>
+						<span>{name}</span>
+						<span class="small-svg admin-user admin-1" title="普通用户"><!--根据权限等级添加class[admin-n],.admin-5表示软件管理员，title与之对应-->
+							<svg>
+								<use xlink:href="#ic_admin"></use>
+							</svg>
+						</span>
+						<span>{部门}</span>
 					</div>
 				</div>
-				<div class="sb-card-foot small-title">
-					<!--重置为初始值（获取数据库的值）-->
-					<svg title="刷新">
-						<use xlink:href="#ic_autorenew" />
+				<div class="sb-card-foot">
+					<svg><!--全选-->
+						<use xlink:href="#ic_select_all"></use>
 					</svg>
-					<svg title="删除">
-						<use xlink:href="#ic_delete"></use>/>
+					<svg><!--改变部门，弹出picker操作-->
+						<use xlink:href="#ic_change_people"></use>
 					</svg>
-					<svg title="发布">>>
-						<use xlink:href="#ic_send"></use>/>
-					</svg>
-				</div>
-				<div class="sb-card-foot small-title foot-one-svg">
-					<svg>
-						<use xlink:href="#ic_done"></use>/>
+					<svg><!--删除（从社团中删除，弹出alert）-->
+						<use xlink:href="#ic_delete"></use>
 					</svg>
 				</div>
 			</div>
 
-			<div class="sb-card link-input">
-				<div class="sb-card-head normal-title">
-					社团链接
+			<div class="sb-card people-jolin">
+				<div class="sb-card-foot small-title">
+					<span>允许申请加入社团</span>
+					<div class="mui-switch  mui-active"><!--关闭时禁用(disabled="disabled"))下面的input#join-pwd-->
+						<div class="mui-switch-handle"></div>
+					</div>
 				</div>
 				<div class="sb-card-body normal-text">
-					<div class="sb-card-list">
-						<select name="年级" id="">
-							<option>链接类型</option>
-							<option>{2012}</option>
-							<option>{2013}</option>
-							<option>{2014}</option>
-						</select>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
-							<span class="focus-line"></span>
-						</span>
+					<div class="sb-card-list point-text">
+						将暗号告知成员，常更换保证安全
 					</div>
 					<div class="sb-card-list">
-						<select name="年级" id="">
-							<option>链接类型</option>
-							<option>{2012}</option>
-							<option>{2013}</option>
-							<option>{2014}</option>
-						</select>
+						<span>设置暗号:</span>
 						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
-							<span class="focus-line"></span>
-						</span>
-					</div>
-					<div class="sb-card-list">
-						<select name="年级" id="">
-							<option>链接类型</option>
-							<option>{2012}</option>
-							<option>{2013}</option>
-							<option>{2014}</option>
-						</select>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
-							<span class="focus-line"></span>
-						</span>
-					</div>
-					<div class="sb-card-list">
-						<select name="年级" id="">
-							<option>链接类型</option>
-							<option>{2012}</option>
-							<option>{2013}</option>
-							<option>{2014}</option>
-						</select>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
-							<span class="focus-line"></span>
-						</span>
-					</div>
-					<div class="sb-card-list">
-						<select name="年级" id="">
-							<option>链接类型</option>
-							<option>{2012}</option>
-							<option>{2013}</option>
-							<option>{2014}</option>
-						</select>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
-							<span class="focus-line"></span>
-						</span>
-					</div>
-					<div class="sb-card-list">
-						<select name="年级" id="">
-							<option>链接类型</option>
-							<option>{2012}</option>
-							<option>{2013}</option>
-							<option>{2014}</option>
-						</select>
-						<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入链接"/>
+							<input class="normal-text" type="text" id="join-pwd" size="14" placeholder="加入社团的暗号"/><!--10个中文字符以内，限中文-->
 							<span class="focus-line"></span>
 						</span>
 					</div>
 				</div>
-				<div class="sb-card-foot small-title">
+				<div class="sb-card-foot small-title foot-one-svg">
 					<svg>
-						<use xlink:href="#ic_help"></use>/>
-					</svg>
-					<svg>
-						<use xlink:href="#ic_done"></use>/>
+						<use xlink:href="#ic_done"></use>
 					</svg>
 				</div>
 			</div>
-
-			<div class="sb-card info-input">
-				<span id="info-input-img" class="community-img">
-					<svg class="info-input-hidden">
-						<use xlink:href="#ic_upload"></use>/>
-					</svg>
-					<img class="info-input-active" src="image/jdzs.png" />
-					<img class="info-input-hidden"  src="image/jdzs.png" />
-					<!--这里的两张图片与社团相对应-->
-				</span>
-				<div class="sb-card-head normal-title">
-					金盾之声广播影视中心
-					<span class="point-text">社团共有{value}个成员</span>
-				</div>
+			
+			<div class="sb-card admin-manage-3"><!--class以admin开头的对应权限-->
+				<div class="sb-card-head normal-title">变更部门管理员</div>
 				<div class="sb-card-body normal-text">
-					社团简介
 					<div class="sb-card-list">
-						<p class="small-title info-input-active">
-							负责安排学院活动拍摄，制作校园电视节目，学院广播节目录制，LED屏幕的播放管理，协助宣传处承办校内校外的活动，和完成宣传处的其他工作 。
-						</p>
-						<span class="input-text info-input-hidden">
-							<textarea class="post-input-textarea" wrap="hard" placeholder="请输入社团简介"></textarea>
+						<span>{部门}</span><!--改变部门，弹出picker操作-->
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="12" placeholder="输入用户ID"/>
+							<span class="focus-line"></span>
+						</span>
+						<span>
+							<svg><!--点击search图标给“父级的父级的父级的后一个元素”添加.admin-manger-result-show-->
+								<use xlink:href="#ic_search"></use>
+							</svg>
 						</span>
 					</div>
 				</div>
-				<div class="sb-card-body normal-text">
-					部门组成
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">影视技术部：</span>
-						<span class="text-align-left">100人</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">影视部：</span>
-						<span class="text-align-left">20人</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">{部门}：</span>
-						<span class="text-align-left">{人数}人</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">{部门}：</span>
-						<span class="text-align-left">{人数}人</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">{部门}：</span>
-						<span class="text-align-left">{人数}人</span>
-					</div>
-					<span class="input-text info-input-hidden">
-						<textarea class="post-input-textarea" wrap="hard" placeholder="一行一个部门，不支持字母及符合"></textarea>
-					</span>
-				</div>
-				<div class="sb-card-body normal-text">
-					主要成员
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">社长：</span>
-						<span class="text-align-left">XXX</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">副社长：</span>
-						<span class="text-align-left">XX</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">XX部部长：</span>
-						<span class="text-align-left">XXX</span>
-					</div>
-					<div class=" sb-card-list small-title info-input-active">
-						<span class="text-align-right">{部门}：</span>
-						<span class="text-align-left">{名字}</span>
-					</div>
-					<span class="input-text info-input-hidden">
-						<textarea class="post-input-textarea" wrap="hard" placeholder="一行一个，职务与姓名用@隔开，如“社长@王小明”"></textarea>
-					</span>
+				<div class="sb-card-body normal-text admin-manage-result"><!--就是给这儿添加.admin-manger-result-show-->
+					<div class="sb-card-list">将{部门}的管理员变为{名字}?</div>
 				</div>
 				<div class="sb-card-foot small-title foot-one-svg">
-					<a id="info-input-button" class="info-input-active" href="#info-input-img">
-						<svg class="">
-							<use xlink:href="#ic_create"></use>/>
+						<svg>
+							<use xlink:href="#ic_done"></use>
 						</svg>
-					</a>
-					<a id="info-input-button" class="info-input-hidden" href="#info-input-img">
-						<svg class="">
-							<!--这个svg是提交，提交后刷新数据-->
-							<use xlink:href="#ic_done"></use>/>
-						</svg>
-					</a>
 				</div>
-
+			</div>
+			
+			<div class="sb-card admin-manage-4"><!--class以admin开头的对应权限-->
+				<div class="sb-card-head normal-title">变更社团管理员</div>
+				<div class="sb-card-body normal-text">
+					<div class="sb-card-list">
+						<span>{社团}</span><!--改变社团，弹出picker操作-->
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="12" placeholder="输入用户ID"/>
+							<span class="focus-line"></span>
+						</span>
+						<span>
+							<svg><!--点击search图标给“父级的父级的父级的后一个元素”添加.admin-manger-result-show-->
+								<use xlink:href="#ic_search"></use>
+							</svg>
+						</span>
+					</div>
+				</div>
+				<div class="sb-card-body normal-text admin-manage-result"><!--就是给这儿添加.admin-manger-result-show-->
+					<div class="sb-card-list">将{社团}的管理员变为{名字}?</div>
+				</div>
+				<div class="sb-card-foot small-title foot-one-svg">
+						<svg>
+							<use xlink:href="#ic_done"></use>
+						</svg>
+				</div>
+			</div>
+			
+			<div class="sb-card admin-manage-3"><!--class以admin开头的对应权限-->
+				<div class="sb-card-head normal-title">变更学校管理员</div>
+				<div class="sb-card-body normal-text">
+					<div class="sb-card-list">
+						<span>{学校}</span><!--改变学校，弹出picker操作-->
+						<span class="input-text">
+							<input class="normal-text" type="text" id="" size="12" placeholder="输入用户ID"/>
+							<span class="focus-line"></span>
+						</span>
+						<span>
+							<svg><!--点击search图标给“父级的父级的父级的后一个元素”添加.admin-manger-result-show-->
+								<use xlink:href="#ic_search"></use>
+							</svg>
+						</span>
+					</div>
+				</div>
+				<div class="sb-card-body normal-text admin-manage-result"><!--就是给这儿添加.admin-manger-result-show-->
+					<div class="sb-card-list">将{学校}的管理员变为{名字}?</div>
+				</div>
+				<div class="sb-card-foot small-title foot-one-svg">
+						<svg>
+							<use xlink:href="#ic_done"></use>
+						</svg>
+				</div>
 			</div>
 
 		</div>
-
-		<script type="application/javascript">
-			mui('.sb-card-foot').on('tap', '#info-input-button', function() {
-				if($('.info-input-hidden').css('display') == 'none') {
-					$('.info-input-hidden').css('display', 'block');
-					$('.info-input-active').css('display', 'none');
-				} else {
-					$('.info-input-hidden').css('display', 'none');
-					$('.info-input-active').css('display', 'block');
-				}
-			});
-			$(function() {
-				$('.post-input-textarea').flexText();
-			});
-		</script>
 	</body>
 
 </html>

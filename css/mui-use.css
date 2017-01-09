@@ -10,7 +10,7 @@
 aside,header{
     display: block;
 }
-.mui-scroll-wrapper {
+.mui-scroll-wrapper{
     position: absolute;
     z-index: 2;
     top: 0;
@@ -19,7 +19,7 @@ aside,header{
     overflow: hidden;
     width: 100%;
 }
-.mui-scroll {
+.mui-scroll{
     position: absolute;
     z-index: 1;
     width: 100%;
