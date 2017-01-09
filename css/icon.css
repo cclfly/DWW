@@ -1,0 +1,55 @@
+/*链接类型图标及颜色*/
+.icon_blank{
+	display: none!important;
+}
+.icon_qzone div {
+	background-image: url(../image/link_icon/qzone.png);
+}
+
+.icon_qzone span {
+	color: #f5bb3d;
+	border: #f5bb3d;
+}
+
+.icon_qzone span::after {
+	content: "QQ空间";
+}
+
+.icon_qq div {
+	background-image: url(../image/link_icon/qq.png);
+}
+
+.icon_qq span {
+	color: #2a9cd5;
+	border: #2a9cd5;
+}
+
+.icon_qq span::after {
+	content: "QQ群";
+}
+
+.icon_weibo div {
+	background-image: url(../image/link_icon/weibo.png);
+}
+
+.icon_weibo span {
+	color: #E6162D;
+	border: #E6162D;
+}
+
+.icon_weibo span::after {
+	content: "新浪微博";
+}
+
+.icon_wechat div {
+	background-image: url(../image/link_icon/wechat.png);
+}
+
+.icon_wechat span {
+	color: #51C332;
+	border: #51C332;
+}
+
+.icon_wechat span::after {
+	content: "微  信";
+}
