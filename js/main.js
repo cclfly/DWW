@@ -1,15 +1,16 @@
+var fnStopPropagation = function(e) {
+	e.stopPropagation();
+}
 $(function() {
 	//加载页面
 	$.ajax({
 		type: "get",
-		url: "svg/svg-sprite.html",
+		url: "svg/svg-sprite-min.html",
 		async: false,
 		success: function(data) {
 			new Vue({
 				el: "#svg",
-				data: {
-					svg: data
-				}
+				template:data
 			});
 		}
 	});
@@ -85,12 +86,22 @@ $(function() {
 		}]
 	};
 	var viewjson = {
-		com: {
+		activePage:'comm',
+		comm: {
 			comPeopleNum:5,
-			comImage: 'image/jdzs.png'
+			comImage: 'image/jdzs.png',
+			
+			scrollY:0
+		},cont:{
+			
+			scrollY:0
+		},mine:{
+			
+			scrollY:0
 		}
 	};
-	//获取模板
+//获取模板
+	//菜单
 	$.ajax({
 		url: "template/menu.template.html",
 		async: false,
@@ -98,39 +109,78 @@ $(function() {
 			$("body").append(data);
 		}
 	});
-	var aViewPage = [];
+	//社团
 	$.ajax({
 		url:"template/community.template.html",
 		async:false,
 		success:function(data){
-			aViewPage[0] = data;
+			new Vue({
+				el:"#commPage",
+				template:data,
+				data:viewjson
+			});
 		}
 	});
-	//渲染模板
+	//通讯录
+	$.ajax({
+		url:"template/contacts.template.html",
+		async:false,
+		success:function(data){
+			new Vue({
+				el:"#contPage",
+				template:data,
+				data:viewjson
+			});
+		}
+	});
+	//个人
+	$.ajax({
+		url:"template/mine.template.html",
+		async:false,
+		success:function(data){
+			new Vue({
+				el:"#minePage",
+				template:data,
+				data:viewjson
+			});
+		}
+	});
+//渲染模板
 	var tmplMenu = new Vue({
 		el: "#offCanvasSide", //"#offCanvasSide",
 		data: datajson
 	});
-	var tmplViewPageActive = new Vue({
-		el: "#viewPage",
-		data: {
-			activePage: aViewPage[0]
+	
+//事件处理
+	//导航
+	$('.mui-tab-item').on('tap',function(){
+		if(viewjson.activePage == $(this).attr('href'))
+		{
+			mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,100);
+		}
+		else
+		{
+			viewjson[viewjson.activePage].scrollY = mui('.mui-scroll-wrapper').scroll().y;
+			viewjson.activePage = $(this).attr('href');
+			mui('.mui-scroll-wrapper').scroll().scrollTo(0,viewjson[viewjson.activePage].scrollY,0);
 		}
 	});
-	var tmplViewPage = new Vue({
-		el: "#viewPage",
-		data: viewjson
-	});
-//事件处理
 	//主页面上下滑动
 	mui('.mui-scroll-wrapper').scroll();
+	//设置侧滑菜单响应范围
+	$('.mui-inner-wrap')[0].addEventListener('dragstart',function(e){
+		if(e.detail.center.x > 12 && !mui('.mui-off-canvas-wrap').offCanvas().isShown())
+		{
+			this.addEventListener('drag',fnStopPropagation);
+		}
+	});
+	$('.mui-inner-wrap')[0].addEventListener('dragend',function(e){
+		this.removeEventListener('drag',fnStopPropagation);
+	});
 	//菜单上下滑动
 	$('.menu-list-top')[0].addEventListener('dragstart', function(e) {
 		var bufY = 0 - e.detail.deltaY;
 		var bufX = 0 - e.detail.deltaX;
-		var fnStopPropagation = function(e) {
-			e.stopPropagation();
-		}
 		if(Math.abs(bufY) < Math.abs(bufX)) {
 			return;
 		}
@@ -159,5 +209,17 @@ $(function() {
 		datajson.selected = this.getAttribute('index');
 		$($(this).parent().children('.menu-list')[datajson.selected]).addClass('menu-choosed');
 		datajson.community[datajson.selected].slct = true;
+	});
+	
+	//通讯录点击展开关闭
+	mui('.contacts-info').on('tap', '.contacts-name', function() {
+		var oInfo = this.parentNode.getElementsByClassName('contacts-detail')[0];
+		if(oInfo.classList.contains('contacts-detail-hidden')) {
+			oInfo.classList.remove('contacts-detail-hidden');
+			this.classList.remove('contacts-name-show');
+		} else {
+			oInfo.classList.add('contacts-detail-hidden');
+			this.classList.add('contacts-name-show');
+		}
 	});
 });
