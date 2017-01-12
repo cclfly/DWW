@@ -1,6 +1,7 @@
-$.ajax('svg/svg-sprite.html', {
+$.ajax('svgicon.html', {
 	async: false,
 	success: function(data) {
-		$('head').append($(data));
+		$('#svg').html(data);
+		$('#svg').hide()
 	}
 });
