@@ -6,6 +6,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+		<link rel="stylesheet" href="css/woc.css" />
 		<link rel="stylesheet" type="text/css" href="css/mui-use.css" />
 		<link rel="stylesheet" type="text/css" href="css/sb.css" />
 		<link rel="stylesheet" href="css/index.css" />
@@ -13,15 +14,16 @@
 
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/loadsvg.js"></script>
 		<script>
 			mui.init({
-				swipeBack: false //停用右滑关闭功能...
+				swipeBack: false //停用右滑关闭功能
 			});
 		</script>
-		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript" src="js/base64.js" ></script>
+		<script type="text/javascript" src="js/crypt.class.js" ></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		<!-- 加载svg --
-		<script type="text/javascript" src="js/loadsvg.js"></script>-->
 		<div id="svg" v-once v-html="svg" style="display: none;"></div>
 	</head>
 	<body>

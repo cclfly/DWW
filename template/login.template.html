@@ -1,0 +1,96 @@
+<div class="log_card">
+	<div class="app_name">
+		<div class="app_title"></div>
+		<div class="app_info">{{name}}</div>
+		<div class="app_info">版本号：{{version}}/{{verComment}}</div>
+	</div>
+	<div class="log_type">
+		<button name="sinaweibo" class="log_weibo" title="新浪微博登陆">
+			<img src="image/weibo_log.png" />
+			<span>用微博帐号登录</span>
+		</button>
+		<button name="qq" class="log_qq" title="腾讯QQ登录">
+			<img src="image/qq_log.png" />
+			<span>用QQ帐号登录</span>
+		</button>
+		<button name="weixin" class="log_wechat" title="微信登录">
+			<img src="image/wechat _log.png" />
+			<span>用微信帐号登录</span>
+		</button>
+		<a class="log_help" title="帮助">帮助</a>
+	</div>
+</div>
+<script>
+	var figureCol = {"qq":"figureurl_2","sinaweibo":"avatar_hd"};
+	function login() {
+		//获取授权
+		var logType = this.name;
+		var bAccr = false;
+		for(var i in app.aAuth) {
+			if(app.aAuth[i].id == logType) {
+				if(app.aAuth[i].userInfo) {
+					app.userInfo.id = app.aAuth[i].authResult.openid;
+					var info = app.aAuth[i].userInfo;
+					console.log(JSON.stringify(info));
+					app.userInfo.portraitUrl = info[figureCol[logType]];
+					app.sAuthType = logType;
+					bAccr = true;
+				} else {
+					app.aAuth[i].login(function(e) {
+						app.userInfo.id = app.aAuth[i].authResult.openid;
+						app.aAuth[i].getUserInfo(function() {
+							var info = app.aAuth[i].userInfo;
+							console.log(JSON.stringify(info));
+							app.userInfo.portraitUrl = info[figureCol[logType]];
+						});
+						app.sAuthType = logType;
+						bAccr = true;
+					});
+				}
+				plus.nativeUI.showWaiting("loading...",{back:"none",background:"rgba(0,0,0,0.3)"});
+				break;
+			}
+		}
+		//真正登录
+		setTimeout(function() {
+			if(bAccr) {
+				app.cry = new Crypt("dww" + app.userInfo.id.toString());
+				var data = {
+					logMsg:{
+						type:app.sAuthType,
+						id:app.userInfo.id
+					},
+					msgType:"login"
+				};
+				fnRequestFromServer(data, function(data) {
+					console.log(JSON.stringify(data));
+					if(data.errno == 1){
+						//TODO:注册
+						document.write(app.userInfo.id);
+						plus.nativeUI.closeWaiting();
+						return;
+					}
+					setTimeout(function(){
+						datajson.name = data.userInfo.name;
+						datajson.icon = app.userInfo.portraitUrl;
+						plus.nativeUI.closeWaiting();
+					},1000);
+					fnMainPage();
+				});
+			}else{
+				plus.nativeUI.closeWaiting();
+				alert("登录失败");
+			}
+		}, 1000);
+	}
+	new Vue({
+		el: ".log_card",
+		data: app
+	});
+	$.getJSON('manifest.json', {}, function(data) {
+		app.version = data['version']["name"];
+		app.name = data["description"] ? data["description"] : "学校社团公告通讯录";
+		app.verComment = data["description"] ? data["description"] : "其它说明";
+	});
+	mui('.log_type').on('tap', 'button', login);
+</script>
