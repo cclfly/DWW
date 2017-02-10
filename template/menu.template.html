@@ -1,14 +1,14 @@
-<div class="mui-off-canvas-wrap mui-draggable mui-slide-in menu-index">
+<div class="mui-off-canvas-wrap mui-draggable mui-slide-in mui-content menu-index">
 	<!-- 菜单容器 -->
 	<aside class="mui-off-canvas-left" id="offCanvasSide">
 		<!-- 菜单具体展示内容 -->
 		<div class="menu-head">
 			<div class="menu-person">
-				<img class="menu-person-icon" v-bind:src="icon" />
+				<img class="menu-person-icon" v-bind:src="userInfo.portraitUrl" />
 				<!--用户头像-->
-				<div class="big-title menu-person-name" v-html="name"></div>
+				<div class="big-title menu-person-name" v-html="userInfo.name"></div>
 			</div>
-			<div class="small-text menu-school" v-html="school"></div>
+			<div class="small-text menu-school" v-html="userInfo.school"></div>
 		</div>
 		<div class="menu-body">
 			<div class="menu-list-top">
@@ -22,18 +22,18 @@
 				</div>
 				<div class="menu-choose-community ">
 					<div class="menu-list-tag small-title">我的社团</div>
-					<div v-for="com in community" v-bind:class="'menu-list '+(com.slct?'menu-choosed':'')" v-bind:index="com.index">
+					<div v-for="com in userInfo.coms" v-bind:class="'menu-list '+(com.slct?'menu-choosed':'')" v-bind:index="com.index">
 						<!--给当前显示的社团添加类menu-choosed-->
 						<img class="menu-icon-img" v-bind:src="com.icon" />
 						<!--社团图标-->
 						<a class="menu-list-text normal-text">{{com.name}}</a>
 					</div>
-					<div class="menu-list" v-if="community.length==0">
+					<div class="menu-list" v-if="userInfo.coms.length==0">
 						<img class="menu-icon-img" />
 						<a class="menu-list-text normal-text">未加入社团</a>
 					</div>
 				</div>
-				<div class="menu-mange-community" v-if="ismanager">
+				<div class="menu-mange-community" v-if="pageData.com&&pageData.com.post>3">
 					<div class="menu-list-tag small-title">社团管理</div>
 					<div class="menu-list">
 						<svg class="menu-icon-svg">
@@ -111,34 +111,94 @@
 				</svg>
 			</a>
 		</header>
-		<nav class="mui-bar mui-bar-tab">
-			<a id="defaultTab" class="mui-tab-item mui-active" href="comm">
-				<svg class="mui-icon">
-					<use xlink:href="#md_description"></use>
-				</svg>
-				<span class="tab-line tab-line-1"></span>
-			</a>
-			<a class="mui-tab-item" href="cont">
-				<svg class="mui-icon">
-					<use xlink:href="#md_people"></use>
-				</svg>
-				<span class="tab-line tab-line-2"></span>
-			</a>
-			<a class="mui-tab-item" href="mine">
-				<svg class="mui-icon">
-					<use xlink:href="#md_assignment_ind"></use>
-				</svg>
-				<span class="tab-line tab-line-3"></span>
-			</a>
-		</nav>
-		<div class="mui-content mui-scroll-wrapper">
-			<div class="mui-scroll">
-				<!-- 主界面具体展示内容 -->
-				<div id="commPage"></div>
-				<div id="contPage"></div>
-				<div id="minePage"></div>
+		<div class="mui-slider mui-fullscreen">
+			<nav class="mui-bar mui-bar-tab mui-segmented-control mui-segmented-control-inverted">
+				<a id="defaultTab" class="mui-tab-item mui-active mui-control-item" data-index="0">
+					<svg class="mui-icon">
+						<use xlink:href="#md_description"></use>
+					</svg>
+					<span class="tab-line tab-line-1"></span>
+				</a>
+				<a class="mui-tab-item mui-control-item" data-index="1">
+					<svg class="mui-icon">
+						<use xlink:href="#md_people"></use>
+					</svg>
+					<span class="tab-line tab-line-2"></span>
+				</a>
+				<a class="mui-tab-item mui-control-item" data-index="2">
+					<svg class="mui-icon">
+						<use xlink:href="#md_assignment_ind"></use>
+					</svg>
+					<span class="tab-line tab-line-3"></span>
+				</a>
+			</nav>
+			<!-- 主界面具体展示内容 -->
+			<div class="mui-slider-group">
+				<div class="mui-slider-item mui-control-content mui-active">
+					<div class="mui-scroll-wrapper">
+						<div id="commPage" class="mui-scroll">
+							<div ></div>
+						</div>
+					</div>
+				</div>
+				<div class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div id="contPage" class="mui-scroll">
+							<div ></div>
+						</div>
+					</div>
+				</div>
+				<div class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div id="minePage" class="mui-scroll">
+							<div ></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="mui-off-canvas-backdrop"></div>
 	</div>
+		<!--<div class="mui-off-canvas-backdrop"></div>-->
 </div>
+<script>
+	new Vue({
+		el:"#offCanvasSide",
+		data:app
+	});
+	$.get('template/community.template.html',{},function(data){
+		app.page.commPage = $(data);
+		$('#commPage').html(app.page.commPage);
+	});
+	$.get('template/contacts.template.html',{},function(data){
+		app.page.contPage = $(data);
+		$('#contPage').html(app.page.contPage);
+	});
+	$.get('template/mine.template.html',{},function(data){
+		app.page.minePage = $(data);
+		$('#minePage').html(app.page.minePage);
+	});
+	//设置侧滑菜单响应范围
+	$('.mui-inner-wrap')[0].addEventListener('dragstart',function(e){
+		if(e.detail.center.x > 20 && !mui('.mui-off-canvas-wrap').offCanvas().isShown())
+		{
+			this.addEventListener('drag',fnStopPropagation);
+		}
+	});
+	$('.mui-inner-wrap')[0].addEventListener('dragend',function(e){
+		this.removeEventListener('drag',fnStopPropagation);
+	});
+	//
+	mui('.mui-scroll-wrapper').scroll({
+        bounce: true, 
+        indicators: true, 
+        deceleration:mui.os.ios?0.003:0.0009 
+    });    
+    mui('.mui-bar').on('tap','.mui-control-item:not(.mui-active)',function(){ 
+        mui('.mui-slider').slider().gotoItem(this.getAttribute('data-index')); 
+    });
+</script>
+<style>
+	.body{
+		display: block;
+	}
+</style>

@@ -1,0 +1,10 @@
+{
+	"url": "http://192.168.191.1:8864/DWW_server/",
+	"api": {
+		"getBook"  : "book",
+		"getNotice": "notice",
+		"login"    : "login",
+		"regist"   : "regist"
+	},
+	"key": "abcd"
+}
