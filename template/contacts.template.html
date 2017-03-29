@@ -8,11 +8,130 @@
 		</div>
 	</div>
 
+	<div v-for="con in contacts" class="sb-card contacts-info">
+		<div v-on:tap="con.isExpand^=1" class="sb-card-foot normal-title contacts-name" v-bind:class="con.isExpand?'':'contacts-name-show'">
+			<span>
+				<img v-bind:src="con.portraitUrl" />
+			</span>
+			<span>{{con.name}}</span>
+			<svg class="contacts-motion-icon">
+				<use xlink:href="#md_expand_more"></use>
+			</svg>
+		</div>
+		<div class="contacts-detail" v-bind:class="con.isExpand?'':'contacts-detail-hidden'">
+			<div class="sb-card-body normal-text contacts-detail">
+				<!-- 号码s -->
+				<div v-for="phone in con.phones" class="sb-card-list">
+					<a>
+						<svg>
+							<use xlink:href="#md_call"></use>
+						</svg>
+					</a>
+					<div class="phone-number">
+						<span class="input-text">
+							{{phone.number}}
+						</span>
+						<span class="point-text">由[{{phone.from}}]于{{phone.date}}添加</span>
+					</div>
+					<a>
+						<svg>
+							<use xlink:href="#md_content_copy"></use>
+						</svg>
+					</a>
+				</div>
+				<!-- 添加 -->
+				<div class="sb-card-list">
+					<a>
+						<svg>
+							<use xlink:href="#md_add"></use>
+						</svg>
+					</a>
+					<span class="input-text">
+							<input class="normal-text" type="text" size="14" placeholder="输入新手机号"/>
+							<span class="focus-line"></span>
+					</span>
+					<a>
+						<svg>
+							<use xlink:href="#md_done"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="sb-card-body small-text contacts-detail">
+				<div class="sb-card-list">
+					<a>
+						<svg>
+							<use xlink:href="#md_person"></use>
+						</svg>
+					</a>
+					<div class="sb-card-body small-text">
+						<div class="sb-card-list" v-on:tap="yearSelect()">
+							<span>年级：</span>
+							<select name="new_community">
+								<!--picker选择器,显示已填写值-->
+								<option value="" selected="selected" disabled="disabled">--请选择--</option>
+								<option value="C1">1111111111</option>
+								<option value="C2">2学校2</option>
+								<option value="C3">3学校3</option>
+								<option value="C4">4学校4</option>
+							</select>
+						</div>
+						<div class="sb-card-list">
+							<span>大队：</span>
+							<select name="new_community">
+								<!--picker选择器,显示已填写值-->
+								<option value="" selected="selected" disabled="disabled">--请选择--</option>
+								<option value="C1">1111111111</option>
+								<option value="C2">2学校2</option>
+								<option value="C3">3学校3</option>
+								<option value="C4">4学校4</option>
+							</select>
+						</div>
+						<div class="sb-card-list">
+							<span>区队：</span>
+							<select name="new_community">
+								<!--picker选择器,显示已填写值-->
+								<option value="" selected="selected" disabled="disabled">--请选择--</option>
+								<option value="C1">1111111111</option>
+								<option value="C2">2学校2</option>
+								<option value="C3">3学校3</option>
+								<option value="C4">4学校4</option>
+							</select>
+						</div>
+						<div class="sb-card-list">
+							<span>专业：</span>
+							<select name="new_community">
+								<!--picker选择器,显示已填写值-->
+								<option value="" selected="selected" disabled="disabled">--请选择--</option>
+								<option value="C1">1111111111</option>
+								<option value="C2">2学校2</option>
+								<option value="C3">3学校3</option>
+								<option value="C4">4学校4</option>
+							</select>
+						</div>
+						<div class="sb-card-list">
+							<span>学号：</span>
+							<span class="input-text">
+									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
+									<span class="focus-line"></span>
+							</span>
+						</div>
+					</div>
+					<a>
+						<svg>
+							<use xlink:href="#md_null"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!---->
 	<div class="sb-card contacts-info">
 		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
 			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
+				<img src="image/jdzs_icon.png" />
+			</span>
 			<span>{name}</span>
 			<svg class="contacts-motion-icon">
 				<use xlink:href="#md_expand_more"></use>
@@ -290,1133 +409,25 @@
 			</div>
 		</div>
 	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="sb-card contacts-info">
-		<div class="sb-card-foot normal-title contacts-name  contacts-name-show">
-			<span>
-						<img src="image/jdzs_icon.png" />
-					</span>
-			<span>{name}</span>
-			<svg class="contacts-motion-icon">
-				<use xlink:href="#md_expand_more"></use>
-			</svg>
-		</div>
-		<div class="contacts-detail contacts-detail-hidden">
-			<div class="sb-card-body normal-text contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13123456789}
-							</span>
-						<span class="point-text">由[name12345678]于2016/12/06添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_call"></use>
-						</svg>
-					</a>
-					<div class="phone-number">
-						<span class="input-text">
-								{13111111111}
-							</span>
-						<span class="point-text">由[name]于{time}添加</span>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_content_copy"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_add"></use>
-						</svg>
-					</a>
-					<span class="input-text">
-							<input class="normal-text" type="text" id="" size="14" placeholder="输入新手机号"/>
-							<span class="focus-line"></span>
-					</span>
-					<a>
-						<svg>
-							<use xlink:href="#md_done"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-body small-text  contacts-detail">
-				<div class="sb-card-list">
-					<a>
-						<svg>
-							<use xlink:href="#md_person"></use>
-						</svg>
-					</a>
-					<div class="sb-card-body small-text">
-						<div class="sb-card-list">
-							<span>年级：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>大队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>区队：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>专业：</span>
-							<select name="new_community">
-								<!--picker选择器,显示已填写值-->
-								<option value="" selected="selected" disabled="disabled">--请选择--</option>
-								<option value="C1">1111111111</option>
-								<option value="C2">2学校2</option>
-								<option value="C3">3学校3</option>
-								<option value="C4">4学校4</option>
-							</select>
-						</div>
-						<div class="sb-card-list">
-							<span>学号：</span>
-							<span class="input-text">
-									<input class="normal-text" type="text" id="" size="14" placeholder="输入学号"/>
-									<span class="focus-line"></span>
-							</span>
-						</div>
-					</div>
-					<a>
-						<svg>
-							<use xlink:href="#md_null"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-			<div class="sb-card-foot small-title foot-one-svg  contacts-detail">
-				<a>
-					<svg>
-						<use xlink:href="#md_content_copy"></use>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-
+	
 </div>
+<script>
+	new Vue({
+		el:".contacts",
+		data:app
+	});
+	function yearSelect(){
+		var a = new mui.DtPicker({
+			type:"year"
+		});
+		a.show(function(e){
+			console.log(e);
+		});
+	}
+	setTimeout(yearSelect,3000);
+	//Test
+	app.contacts.push({name:"aaa",phones:[{number:"15196298886",from:"ccf",date:"2017/03/25"}],portraitUrl:"",isExpand:false})
+	app.contacts.push({name:"aaa",phones:[{number:"15196298886",from:"ccf",date:"2017/03/25"}],portraitUrl:"",isExpand:false})
+	app.contacts.push({name:"aaa",phones:[{number:"15196298886",from:"ccf",date:"2017/03/25"}],portraitUrl:"",isExpand:false})
+	app.contacts.push({name:"aaa",phones:[{number:"15196298886",from:"ccf",date:"2017/03/25"}],portraitUrl:"",isExpand:false})
+</script>

@@ -1,9 +1,9 @@
 <div class="body community">
-	<div class="sb-card community-info">
+	<div v-if="comSelected>=0" class="sb-card community-info">
 		<span id="info-input-img" class="community-img">
-					<img class="info-input-active" src="image/jdzs.png" />
-					<!--这里的两张图片与社团相对应-->
-				</span>
+				<img class="info-input-active" v-bind:src="comsInfo[comSelected].img" />
+				<!--这里的两张图片与社团相对应-->
+			</span>
 		<div class="sb-card-head normal-title">
 			金盾之声广播影视中心
 			<span class="point-text">社团共有{value}个成员</span>
@@ -59,7 +59,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="sb-card community-link">
+	<div v-if="comSelected>=0" class="sb-card community-link">
 		<!--body竖排，head、foot横排，操作事件放foot-->
 		<div class="sb-card-head normal-title">
 			社团链接
@@ -87,26 +87,34 @@
 			</a>
 		</div>
 	</div>
-	<div class="sb-card community-post">
+	
+	<div v-for="notice in notices" class="sb-card community-post" v-bind:class="'notice-type-'+notice.type">
 		<div class="sb-card-head normal-title">
-			{公告1标题}
-			<span class="point-text">{time} 发布者：{person} 来自：{department}</span>
+			{{notice.title}}
+			<span class="point-text">{{notice.time}} 发布者：{{notice.person}} 来自：{{notice.department}}</span>
 		</div>
-		<div class="sb-card-body normal-text">
-			<p>
-				{公告1内容}
-			</p>
-		</div>
-	</div>
-	<div class="sb-card community-post">
-		<div class="sb-card-head normal-title">
-			首行缩进
-			<span class="point-text">2016.12.9 发布者：cxy 来自：home</span>
-		</div>
-		<div class="sb-card-body normal-text">
-			<p>
-				段落前面空两个字的距离，不要再使用空格了。应该使用首行缩进text-indent。text-indent可以使得容器内首行缩进一定单位。比如中文段落一般每段前空两个汉字。
-			</p>
-		</div>
+		<div class="sb-card-body normal-text" v-html="text2p(notice.content)"></div>
 	</div>
 </div>
+<script>
+	function text2p(text){
+		var text = "<p>"+text.trim().replace(/\n/g,"</p><p>").replace(/&/g,"&amp;").replace(/\t/g,"&nbsp;&nbsp;&nbsp;&nbsp;").replace(/\s/g,"&nbsp;")+"</p>";
+		return text;
+	}
+	new Vue({
+		el:".community",
+		data:app
+	});
+	//Test Data
+	app.notices.push({title:"公告一",type:0,time:"time",person:"cclfly",department:"a",content:"段落前面空两个字的距离，不要再使用空格了。应该使用首行缩进text-indent。\ntext-indent可以使得容器内首行缩进一定单位。比如中文段落一般每段前空两个汉字。"});
+	app.notices.push({title:"{公告1标题}",type:1,time:"{time}",person:"{person}",department:"{department}",content:"{公告1内容}"});
+	app.notices.push({title:"首行缩进",type:1,time:"2016.12.9",person:"cxy",department:"home",content:"段落前	&&&#65; 面？？？？？?????\"<     ><b>空两个字的距离，不要再使用空格了。应该使用首行缩进text-indent。text-indent可以使得容器内首行缩进一定单位。比如中文段落一般每段前空两个汉字。"});
+	app.comsInfo.push({index:0,name:"金盾",img:"image/jdzs.png",icon:"image/jdzs_icon.png",post:2})
+	app.comsInfo.push({index:1,name:"心协",img:"image/jdzs.png",icon:"image/jdzs_icon.png",post:4})
+	
+</script>
+<style>
+	.sb-card-body p {
+		word-wrap: break-word;
+	}
+</style>

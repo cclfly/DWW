@@ -22,18 +22,18 @@
 				</div>
 				<div class="menu-choose-community ">
 					<div class="menu-list-tag small-title">我的社团</div>
-					<div v-for="com in userInfo.coms" v-bind:class="'menu-list '+(com.slct?'menu-choosed':'')" v-bind:index="com.index">
+					<div v-for="com in comsInfo" class="menu-list" v-bind:class="(com.index==comSelected?'menu-choosed':'')" v-bind:index="com.index">
 						<!--给当前显示的社团添加类menu-choosed-->
 						<img class="menu-icon-img" v-bind:src="com.icon" />
 						<!--社团图标-->
 						<a class="menu-list-text normal-text">{{com.name}}</a>
 					</div>
-					<div class="menu-list" v-if="userInfo.coms.length==0">
+					<div class="menu-list" v-if="comsInfo.length==0">
 						<img class="menu-icon-img" />
 						<a class="menu-list-text normal-text">未加入社团</a>
 					</div>
 				</div>
-				<div class="menu-mange-community" v-if="pageData.com&&pageData.com.post>3">
+				<div class="menu-mange-community" v-if="comSelected>=0&&comsInfo[comSelected].post>3">
 					<div class="menu-list-tag small-title">社团管理</div>
 					<div class="menu-list">
 						<svg class="menu-icon-svg">
@@ -111,94 +111,218 @@
 				</svg>
 			</a>
 		</header>
-		<div class="mui-slider mui-fullscreen">
-			<nav class="mui-bar mui-bar-tab mui-segmented-control mui-segmented-control-inverted">
-				<a id="defaultTab" class="mui-tab-item mui-active mui-control-item" data-index="0">
-					<svg class="mui-icon">
-						<use xlink:href="#md_description"></use>
-					</svg>
-					<span class="tab-line tab-line-1"></span>
-				</a>
-				<a class="mui-tab-item mui-control-item" data-index="1">
-					<svg class="mui-icon">
-						<use xlink:href="#md_people"></use>
-					</svg>
-					<span class="tab-line tab-line-2"></span>
-				</a>
-				<a class="mui-tab-item mui-control-item" data-index="2">
-					<svg class="mui-icon">
-						<use xlink:href="#md_assignment_ind"></use>
-					</svg>
-					<span class="tab-line tab-line-3"></span>
-				</a>
-			</nav>
-			<!-- 主界面具体展示内容 -->
-			<div class="mui-slider-group">
-				<div class="mui-slider-item mui-control-content mui-active">
-					<div class="mui-scroll-wrapper">
-						<div id="commPage" class="mui-scroll">
-							<div ></div>
-						</div>
-					</div>
-				</div>
-				<div class="mui-slider-item mui-control-content">
-					<div class="mui-scroll-wrapper">
-						<div id="contPage" class="mui-scroll">
-							<div ></div>
-						</div>
-					</div>
-				</div>
-				<div class="mui-slider-item mui-control-content">
-					<div class="mui-scroll-wrapper">
-						<div id="minePage" class="mui-scroll">
-							<div ></div>
-						</div>
-					</div>
-				</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="community.html" data-index="0">
+				<svg class="mui-icon">
+					<use xlink:href="#md_description"></use>
+				</svg>
+				<span class="tab-line tab-line-1"></span>
+			</a>
+			<a class="mui-tab-item" href="people.html" data-index="1">
+				<svg class="mui-icon">
+					<use xlink:href="#md_people"></use>
+				</svg>
+				<span class="tab-line tab-line-2"></span>
+			</a>
+			<a class="mui-tab-item" href="mine.html" data-index="2">
+				<svg class="mui-icon">
+					<use xlink:href="#md_assignment_ind"></use>
+				</svg>
+				<span class="tab-line tab-line-3"></span>
+			</a>
+		</nav>
+		<div id="my-content">
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<div id="commPage"></div>
 			</div>
 		</div>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<div id="contPage"></div>
+			</div>
+		</div>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!-- 主界面具体展示内容 -->
+				<div id="minePage"></div>
+			</div>
+		</div>
+		</div>
+		<div class="mui-off-canvas-backdrop"></div>
 	</div>
-		<!--<div class="mui-off-canvas-backdrop"></div>-->
 </div>
 <script>
 	new Vue({
-		el:"#offCanvasSide",
-		data:app
+		el: "#offCanvasSide",
+		data: app
 	});
-	$.get('template/community.template.html',{},function(data){
+	$.get('template/community.template.html', {}, function(data) {
 		app.page.commPage = $(data);
 		$('#commPage').html(app.page.commPage);
 	});
-	$.get('template/contacts.template.html',{},function(data){
+	$.get('template/contacts.template.html', {}, function(data) {
 		app.page.contPage = $(data);
 		$('#contPage').html(app.page.contPage);
 	});
-	$.get('template/mine.template.html',{},function(data){
+	$.get('template/mine.template.html', {}, function(data) {
 		app.page.minePage = $(data);
 		$('#minePage').html(app.page.minePage);
 	});
 	//设置侧滑菜单响应范围
-	$('.mui-inner-wrap')[0].addEventListener('dragstart',function(e){
-		if(e.detail.center.x > 20 && !mui('.mui-off-canvas-wrap').offCanvas().isShown())
-		{
-			this.addEventListener('drag',fnStopPropagation);
+	$('.mui-inner-wrap')[0].addEventListener('dragstart', function(e) {
+		if(e.detail.center.x > 20 && !mui('.mui-off-canvas-wrap').offCanvas().isShown()) {
+			this.addEventListener('drag', fnStopPropagation);
 		}
 	});
-	$('.mui-inner-wrap')[0].addEventListener('dragend',function(e){
-		this.removeEventListener('drag',fnStopPropagation);
+	$('.mui-inner-wrap')[0].addEventListener('dragend', function(e) {
+		this.removeEventListener('drag', fnStopPropagation);
 	});
 	//
+	(function(){
+		var ex = $('header').outerHeight()+$('nav').outerHeight();
+		var conHeight = document.documentElement.clientHeight-ex;
+		var wWidth = document.documentElement.clientWidth;
+		var aqCon = $('.mui-inner-wrap .mui-content');
+		var aqNavItem = $('.mui-bar-tab .mui-tab-item');
+		var iCurCon = 0;
+		var tAni = null;		//复位动画计时器
+		var fnAni= function(timer,cur){
+			clearInterval(timer);
+			return setInterval(function(){
+				(function(off){
+					if(parseInt(off*2) == 0){
+						clearInterval(tAni);
+					}
+					aqCon.css("left",function(index,value){
+//						console.log(index+":"+value+"\t"+off);
+						return parseFloat(value)-off/4;
+					});
+				})($(aqCon[cur]).offset().left);
+			},30);
+		};
+		$('.menu-index').css("padding-top",ex);
+		$('#my-content .mui-content').css("height", conHeight+"px");
+		aqCon.css("left",function(index,value){
+			return index*wWidth;
+		});
+		$('#my-content')[0].addEventListener('dragstart',function(e){
+			//tAni = fnAni(tAni,iCurCon);
+			if(e.detail.center.x < 20) {
+				return;
+			}
+			var bufY = 0 - e.detail.deltaY;
+			var bufX = 0 - e.detail.deltaX;
+			if(Math.abs(bufY) > Math.abs(bufX)) {
+				return;
+			}
+			clearInterval(tAni);
+			var fnDrag = function(e){
+				var sub = bufX - e.detail.deltaX;
+				bufX = e.detail.deltaX;
+				var damp = 0.15;		//阻尼
+				var x0 = parseFloat($(aqCon[0]).css("left"));
+				var x1 = parseFloat($(aqCon[aqCon.length-1]).css("left"));
+				if(x1<0||x0>0){
+//					console.log(x0);
+					if(x0>0){
+						damp += x0/300;
+					}else{
+						damp += -x1/300;
+					}
+					if(damp>1){
+						damp = 1;
+					}
+				}
+//				console.log(damp);
+				(function(damp){
+					aqCon.css("left",function(index,value){
+//						console.log(damp);
+						return parseFloat(value) - sub*(1-damp);
+					});
+				})(damp);
+				var iCur = -parseInt(($(aqCon[0]).offset().left-wWidth/2)/wWidth);
+				iCur = iCur<0?0:iCur;
+				iCur = iCur>=aqCon.length?aqCon.length-1:iCur;
+				if(iCur != iCurCon){
+					aqNavItem.removeClass("mui-active");
+					$(aqNavItem[iCur]).addClass("mui-active");
+					iCurCon = iCur;
+				}
+			};
+			//this.addEventListener('drag',fnDrag);
+			this.ondrag = fnDrag;
+			$(this).one('dragend',function(e){
+				//this.removeEventListener('drag',fnDrag);
+				this.ondrag = null;
+				clearInterval(tAni);
+				tAni = fnAni(tAni,iCurCon);
+			});
+		});
+		aqNavItem.on("tap",function(){
+			iCurCon = parseInt($(this).attr("data-index"));
+			tAni = fnAni(tAni,iCurCon);
+		});
+	})();
+	//
 	mui('.mui-scroll-wrapper').scroll({
-        bounce: true, 
-        indicators: true, 
-        deceleration:mui.os.ios?0.003:0.0009 
-    });    
-    mui('.mui-bar').on('tap','.mui-control-item:not(.mui-active)',function(){ 
-        mui('.mui-slider').slider().gotoItem(this.getAttribute('data-index')); 
-    });
+		bounce: true,
+		indicators: false,
+		deceleration: mui.os.ios ? 0.003 : 0.0009
+	});
+	//菜单上下滑动
+	$('.menu-list-top')[0].addEventListener('dragstart', function(e) {
+		var bufY = 0 - e.detail.deltaY;
+		var bufX = 0 - e.detail.deltaX;
+		if(Math.abs(bufY) < Math.abs(bufX)) {
+			return;
+		}
+		$('aside')[0].addEventListener('drag', fnStopPropagation);
+		var fnDrag = function(e) {
+			var sub = bufY - e.detail.deltaY;
+			if(sub != 0) {
+				$(this).scrollTop($(this).scrollTop() + (sub));
+				bufY = e.detail.deltaY;
+			}
+		};
+		this.addEventListener('drag', fnDrag);
+		$(this).one('dragend', function() {
+			this.removeEventListener('drag', fnDrag);
+			//$('aside')[0].addEventListener('drag',function(e){});
+			$('aside')[0].removeEventListener('drag', fnStopPropagation);
+		});
+	});
+	//菜单点击
+	//TODO:刷新数据，切换首页显示，切换通讯录页显示
+	$('.menu-choose-community').on('tap', '.menu-list', function() {
+		app.comSelected = $(this).attr('index');
+	});
+	$('.menu-choose-community').on('tap', '.menu-list-tag', function() {
+		app.comSelected = -1;
+	});
 </script>
 <style>
-	.body{
+	.body {
 		display: block;
+	}
+	.mui-inner-wrap{
+		width: 100%;
+		overflow: hidden;
+	}
+	#my-content {
+		position: relative;
+		height: 100%;
+	}
+	#my-content .mui-content {
+		height: 100%;
+		position: absolute;
+		float: left;
+		bottom: 0;
+		padding-top: 0!important;
+	}
+	.mui-off-canvas-backdrop {
+		position: fixed!important;
 	}
 </style>

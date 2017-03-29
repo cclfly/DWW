@@ -1,10 +1,10 @@
 var app = {
-	name      : "",
-	version   : "",
-	verComment: "",
+	name       : "",
+	version    : "",
+	verComment : "",
 
-	api       : {},
-	page	  : {
+	api        : {},
+	page	   : {
 		active   : "loginPage",
 		mainPage : null,
 		loginPage: null,
@@ -19,20 +19,26 @@ var app = {
 			min:{}
 		},
 	},
-
-	aAuth 	  : [],
-	sAuthType : "",
-	isLogin	  : true,
 	
-	userInfo  : {
-		id: "",
-		name:"aaaa",
-		portraitUrl: "",
-		school:"aaaaaaaaaaaaaa",
-		coms:[]
+	comsInfo   : [],
+	comSelected: -1,
+	contacts   : [],
+	
+	notices    : [],
+
+	aAuth 	   : [],
+	sAuthType  : "",
+	isLogin	   : true,
+	
+	userInfo   : {
+		id: "-1",
+		name:"游客",
+		portraitUrl: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490161936202&di=6bda745a14c236e8df32cc9be99006f0&imgtype=0&src=http%3A%2F%2Fimg01.taopic.com%2F151008%2F240380-15100PHR210.jpg",
+		school:"无",
+		option:{}
 	},
 	
-	cry       : null
+	cry        : null
 };
 
 var isJson = function(obj){ 
@@ -107,6 +113,10 @@ var fnStopPropagation = function(e) {
 
 
 plusReady = function(){
+	//登录准备
+	plus.oauth.getServices(function(services){
+		app.aAuth = services;
+	});
 	// Android处理返回键
 	plus.key.addEventListener('backbutton',function(){
 //		if(confirm('确认退出？')){
